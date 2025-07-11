@@ -1,4 +1,5 @@
 import React from "react";
+import Script from "next/script";
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema } from "@once-ui-system/core";
 import { home, about, person, newsletter, baseURL, routes } from "@/resources";
@@ -25,17 +26,32 @@ export default function Home() {
       <Column fillWidth paddingY="24" gap="m">
         <Column maxWidth="s">
           {home.featured.display && (
-          <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
-            <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
-              href={home.featured.href}>
-              <Row paddingY="2">{home.featured.title}</Row>
-            </Badge>
-          </RevealFx>
+            <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
+              <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
+                href={home.featured.href}>
+                <Row paddingY="2">{home.featured.title}</Row>
+              </Badge>
+            </RevealFx>
           )}
           <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="16">
             <Heading wrap="balance" variant="display-strong-l">
               {home.headline}
             </Heading>
+          </RevealFx>
+          {/* Setmore Booking Button */}
+          <RevealFx translateY="16" delay={0.8}>
+            <a
+              id="Setmore_button_iframe"
+              href="https://markyabut.setmore.com"
+              style={{ textDecoration: 'none' }}
+            >
+              <img
+                src="https://assets.setmore.com/setmore/images/2.0/Settings/book-now-black.svg"
+                alt="Book an appointment with mark yabut using Setmore"
+                style={{ maxWidth: '200px', height: 'auto', border: 'none' }}
+              />
+            </a>
+            <br />
           </RevealFx>
           <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="32">
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
@@ -84,6 +100,13 @@ export default function Home() {
       )}
       <Projects range={[2]} />
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
+
+      {/* Setmore Booking Script */}
+      <Script
+        id="setmore_script"
+        src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"
+        strategy="lazyOnload"
+      />
     </Column>
   );
 }
