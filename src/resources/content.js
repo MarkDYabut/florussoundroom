@@ -8,7 +8,7 @@ const person = {
   },
   role: "Sound Studio",
   avatar: "/images/avatar.webp",
-  email: "example@gmail.com",
+  email: "florussoundroom@gmail.com",
   location: "America/Toronto", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: [], // optional: Leave the array empty if you don't want to display languages
 };
@@ -30,17 +30,17 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/MarkDYabut/magic-portfolio-for-next-js",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com",
   },
   {
-    name: "Threads",
+    name: "Instagram",
     icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.instagram.com/florussoundroom/",
   },
   {
     name: "Email",
@@ -89,9 +89,15 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        FLORUS is a studio and creative platform built
+        with intention. More than a place to practice,
+        FLORUS lives at the intersection of music, culture,
+        and community — offering tools, education, and
+        curated experiences for DJs and sound artists
+        who value craft, individuality, and depth. Every
+        detail, from programming to education is designed
+        to foster growth and preserve the integrity of the
+        art.
       </>
     ),
   },
@@ -100,17 +106,17 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "DOWest Fest",
+        timeframe: "2025 June 8",
+        role: "Sound",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Provided comprehensive DJ equipment rental and technical support for over 40 artists 
+            throughout the 3-day festival, ensuring seamless performances with zero technical failures.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Designed and deployed a custom multi-stage sound system featuring Pioneer CDJ-3000s 
+            and DJM-V10 mixers, delivering pristine audio quality across multiple venues simultaneously.
           </>,
         ],
         images: [
@@ -124,17 +130,17 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "KYDS BOP",
+        timeframe: "2025 June 14",
+        role: "Sound",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Curated and provided premium vinyl-focused DJ setups for 25+ artists during the event, 
+            featuring classic Technics 1210 MK5 turntables for authentic analog mixing experiences.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Engineered a specialized sound system combining legendary Technics 1210 MK5s with 
+            the flagship DJM-V10 mixer, delivering warm analog sound with modern mixing capabilities.
           </>,
         ],
         images: [],
@@ -142,7 +148,7 @@ const about = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Studies",
     institutions: [
       {
@@ -160,8 +166,8 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        title: "Sound Production",
+        description: <>Crafting cutting-edge beats and soundscapes using industry-standard tools like Ableton Live, FL Studio, and the legendary Akai MPC 1000. From intricate sampling and drum programming to full track production and mixing, delivering professional-grade music that pushes creative boundaries.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
@@ -179,8 +185,8 @@ const about = {
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        title: "All Format DJing",
+        description: <>Master of vinyl and digital formats, delivering seamless mixes on industry-leading Pioneer CDJ-3000s paired with the flagship DJM-V10 mixer. Expert in rekordbox preparation, harmonic mixing, and the timeless art of vinyl beatmatching—bridging classic turntable techniques with cutting-edge digital precision for unforgettable performances.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
