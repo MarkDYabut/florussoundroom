@@ -43,7 +43,7 @@ export default function Home() {
             <a
               id="Setmore_button_iframe"
               href="https://markyabut.setmore.com"
-              style={{ textDecoration: 'none' }}
+              style={{ textDecoration: 'none', margin: '32px 0' }}
             >
               <img
                 src="https://assets.setmore.com/setmore/images/2.0/Settings/book-now-black.svg"
@@ -51,7 +51,6 @@ export default function Home() {
                 style={{ maxWidth: '200px', height: 'auto', border: 'none' }}
               />
             </a>
-            <br />
           </RevealFx>
           <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="32">
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
@@ -83,7 +82,7 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.6}>
+      {/* <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
       {routes["/blog"] && (
@@ -99,7 +98,7 @@ export default function Home() {
         </Flex>
       )}
       <Projects range={[2]} />
-      {newsletter.display && <Mailchimp newsletter={newsletter} />}
+      {newsletter.display && <Mailchimp newsletter={newsletter} />} */}
 
       {/* Setmore Booking Script */}
       <Script
