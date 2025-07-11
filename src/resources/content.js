@@ -18,8 +18,8 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      Stay updated with the latest in sound engineering, production techniques, mixing insights, and 
+      exclusive events from Toronto's premier DJ sound room and creative space.
     </>
   ),
 };
@@ -28,14 +28,14 @@ const social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   {
-    name: "GitHub",
+    name: "SoundCloud",
     icon: "github",
-    link: "https://github.com/MarkDYabut/magic-portfolio-for-next-js",
+    link: "https://soundcloud.com/florussoundroom",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com",
+    link: "https://www.linkedin.com/company/florussoundroom",
   },
   {
     name: "Instagram",
@@ -103,27 +103,31 @@ const about = {
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Recent Projects & Events",
     experiences: [
       {
         company: "DOWest Fest",
         timeframe: "2025 June 8",
-        role: "Sound",
+        role: "Lead Sound Engineer & Equipment Provider",
         achievements: [
           <>
-            Provided comprehensive DJ equipment rental and technical support for over 40 artists 
-            throughout the 3-day festival, ensuring seamless performances with zero technical failures.
+            Designed and implemented a comprehensive multi-stage sound system supporting 40+ artists 
+            across a 3-day festival, achieving zero technical failures and pristine audio quality throughout.
           </>,
           <>
-            Designed and deployed a custom multi-stage sound system featuring Pioneer CDJ-3000s 
-            and DJM-V10 mixers, delivering pristine audio quality across multiple venues simultaneously.
+            Deployed custom Pioneer CDJ-3000 and DJM-V10 mixer configurations with advanced DSP processing, 
+            ensuring optimal sound reproduction across diverse genres and performance styles.
+          </>,
+          <>
+            Managed real-time technical support, equipment rental coordination, and artist liaison services, 
+            earning recognition for exceptional professionalism and technical expertise.
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            alt: "DOWest Fest sound system setup",
             width: 16,
             height: 9,
           },
@@ -132,66 +136,114 @@ const about = {
       {
         company: "KYDS BOP",
         timeframe: "2025 June 14",
-        role: "Sound",
+        role: "Vinyl Specialist & Sound System Designer",
         achievements: [
           <>
-            Curated and provided premium vinyl-focused DJ setups for 25+ artists during the event, 
-            featuring classic Technics 1210 MK5 turntables for authentic analog mixing experiences.
+            Curated premium vinyl-focused DJ setups for 25+ artists, featuring legendary Technics 1210 MK5 
+            turntables paired with modern mixing technology for the ultimate analog experience.
           </>,
           <>
-            Engineered a specialized sound system combining legendary Technics 1210 MK5s with 
-            the flagship DJM-V10 mixer, delivering warm analog sound with modern mixing capabilities.
+            Engineered a specialized hybrid sound system combining classic Technics 1210 MK5s with the 
+            flagship DJM-V10 mixer, delivering warm analog character with contemporary mixing capabilities.
+          </>,
+          <>
+            Provided on-site technical support and turntable calibration services, ensuring optimal 
+            performance for both veteran vinyl DJs and newcomers to the format.
           </>,
         ],
         images: [],
       },
+      {
+        company: "Private Studio Sessions",
+        timeframe: "Ongoing",
+        role: "Music Producer & Mix Engineer",
+        achievements: [
+          <>
+            Produced and mixed tracks for emerging Toronto artists across hip-hop, electronic, and R&B genres 
+            using industry-standard analog and digital processing chains.
+          </>,
+          <>
+            Specialized in beat making with the legendary Akai MPC 1000, creating authentic boom-bap and 
+            contemporary trap productions with impeccable sampling and drum programming.
+          </>,
+          <>
+            Developed signature mixing techniques combining analog outboard gear with modern DAW workflows, 
+            resulting in releases that have gained traction on streaming platforms and radio.
+          </>,
+        ],
+        images: [
+          {
+            src: "/images/projects/project-01/cover-02.jpg",
+            alt: "Studio mixing session",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
     ],
   },
   studies: {
-    display: false, // set to false to hide this section
-    title: "Studies",
+    display: true, // set to true to show this section
+    title: "Education & Certifications",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Audio Engineering Society (AES)",
+        description: <>Professional certification in sound engineering and acoustics.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Pioneer DJ Academy",
+        description: <>Advanced training in rekordbox, CDJ operation, and professional mixing techniques.</>,
+      },
+      {
+        name: "Ableton Live Certified Trainer Program",
+        description: <>Comprehensive music production and live performance certification.</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Technical Expertise",
     skills: [
       {
-        title: "Sound Production",
-        description: <>Crafting cutting-edge beats and soundscapes using industry-standard tools like Ableton Live, FL Studio, and the legendary Akai MPC 1000. From intricate sampling and drum programming to full track production and mixing, delivering professional-grade music that pushes creative boundaries.</>,
+        title: "Sound Production & Engineering",
+        description: <>Professional music production using industry-standard DAWs including Ableton Live, Pro Tools, and Logic Pro. Expert in sampling, sound design, mixing, and mastering with analog and digital processing. Specialized in beat making with iconic gear like the Akai MPC 1000 and modern controllers.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
+            alt: "Sound production setup",
             width: 16,
             height: 9,
           },
           {
             src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
+            alt: "Studio mixing board",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        title: "All Format DJing",
-        description: <>Master of vinyl and digital formats, delivering seamless mixes on industry-leading Pioneer CDJ-3000s paired with the flagship DJM-V10 mixer. Expert in rekordbox preparation, harmonic mixing, and the timeless art of vinyl beatmatching—bridging classic turntable techniques with cutting-edge digital precision for unforgettable performances.</>,
+        title: "Professional DJ Performance",
+        description: <>Master of all formats - vinyl, CDJ, and digital. Expert operation of Pioneer CDJ-3000s, DJM-V10 mixer, and classic Technics 1210 turntables. Advanced skills in harmonic mixing, beatmatching, rekordbox preparation, and live remixing for seamless, dynamic performances across all genres.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            alt: "DJ setup with CDJs",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Speaker System Design & DSP",
+        description: <>Comprehensive expertise in active speaker systems, DSP configuration, and amplifier matching. Skilled in acoustic analysis, crossover design, room treatment, and system tuning for optimal sound reproduction. Experience with professional brands like Meyer Sound, d&b audiotechnik, and QSC.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-05.png",
+            alt: "Professional speaker system",
             width: 16,
             height: 9,
           },
@@ -204,8 +256,8 @@ const about = {
 const blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  title: "Sound Engineering Insights & Tutorials",
+  description: `Read the latest production tips, mixing techniques, and industry insights from ${person.name}`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
@@ -213,8 +265,8 @@ const blog = {
 const work = {
   path: "/work",
   label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  title: `Projects & Services – ${person.name}`,
+  description: `Sound engineering projects, DJ services, and equipment installations by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
@@ -222,8 +274,8 @@ const work = {
 const gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
+  title: `Studio & Event Gallery – ${person.name}`,
+  description: `Behind-the-scenes photos from studio sessions, events, and sound system installations by ${person.name}`,
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
   images: [
