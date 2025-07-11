@@ -51,7 +51,7 @@ const social = [
 
 const home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/images/og/homepage-og.jpg",
   label: "Home",
   title: `${person.name}'s Landing Site`,
   description: `Landing website showcasing brand as a ${person.role}`,
