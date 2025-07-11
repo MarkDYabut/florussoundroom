@@ -1,54 +1,58 @@
-/* :root {
-  /*
-  /* Example setup for custom colors */
-  /* Generate at: https://once-ui.com/customize */
-  /*
-  --scheme-brand-100: #08002f;
-  --scheme-brand-200:  #04025c;
-  --scheme-brand-300:  #1f398e;
-  --scheme-brand-400:  #3856ae;
-  --scheme-brand-500:  #5071cc;
-  --scheme-brand-600:  #6f94f1;
-  --scheme-brand-700:  #8db3ff;
-  --scheme-brand-800:  #b2dbff;
-  --scheme-brand-900:  #bfe8ff;
-  --scheme-brand-1000: #ccf6ff;
-  --scheme-brand-1100: #d2fcff;
-  --scheme-brand-1200: #d2fcff;
-  --scheme-brand-600-10: rgba(111,148,241,0.1);
-  --scheme-brand-600-30: rgba(111,148,241,0.3);
-  --scheme-brand-600-50: rgba(111,148,241,0.5);
+:root {
+  /* Custom color scheme based on provided colors */
+  /* #D3E5D5 - Light green/mint */
+  /* #3B7D46 - Dark green */
+  /* #010101 - Near black */
+  /* #325C5B - Dark teal/green */
+  
+  /* Brand colors - Using dark green as primary */
+  --scheme-brand-100: #010101;
+  --scheme-brand-200: #0a1b0c;
+  --scheme-brand-300: #1a2d1e;
+  --scheme-brand-400: #2a4030;
+  --scheme-brand-500: #325c5b;
+  --scheme-brand-600: #3b7d46;
+  --scheme-brand-700: #4a9555;
+  --scheme-brand-800: #7bb584;
+  --scheme-brand-900: #a8cdb0;
+  --scheme-brand-1000: #d3e5d5;
+  --scheme-brand-1100: #e6f2e7;
+  --scheme-brand-1200: #f0f8f1;
+  --scheme-brand-600-10: rgba(59,125,70,0.1);
+  --scheme-brand-600-30: rgba(59,125,70,0.3);
+  --scheme-brand-600-50: rgba(59,125,70,0.5);
 
-  --scheme-accent-100:  #030b10;
-  --scheme-accent-200:  #0d181d;
-  --scheme-accent-300:  #364248;
-  --scheme-accent-400:  #505d64;
-  --scheme-accent-500:  #69777e;
-  --scheme-accent-600:  #8a989f;
-  --scheme-accent-700:  #a8b7bf;
-  --scheme-accent-800:  #c8d7df;
-  --scheme-accent-900:  #d5e4ec;
-  --scheme-accent-1000: #e2f1f9;
-  --scheme-accent-1100: #e9f8ff;
-  --scheme-accent-1200: #efffff;
-  --scheme-accent-600-10: rgba(138,152,159,0.1);
-  --scheme-accent-600-30: rgba(138,152,159,0.3);
-  --scheme-accent-600-50: rgba(138,152,159,0.5);
+  /* Accent colors - Using dark teal */
+  --scheme-accent-100: #010101;
+  --scheme-accent-200: #091413;
+  --scheme-accent-300: #1a2625;
+  --scheme-accent-400: #2a3837;
+  --scheme-accent-500: #325c5b;
+  --scheme-accent-600: #3e736f;
+  --scheme-accent-700: #4d8a85;
+  --scheme-accent-800: #7ba8a5;
+  --scheme-accent-900: #a8c6c4;
+  --scheme-accent-1000: #d3e5d5;
+  --scheme-accent-1100: #e6f2f1;
+  --scheme-accent-1200: #f0f8f8;
+  --scheme-accent-600-10: rgba(50,92,91,0.1);
+  --scheme-accent-600-30: rgba(50,92,91,0.3);
+  --scheme-accent-600-50: rgba(50,92,91,0.5);
 
-  --scheme-neutral-100:  #020b10;
-  --scheme-neutral-200:  #0b181d;
-  --scheme-neutral-300:  #344248;
-  --scheme-neutral-400:  #4f5d64;
-  --scheme-neutral-500:  #68777e;
-  --scheme-neutral-600:  #89989f;
-  --scheme-neutral-700:  #a7b7be;
-  --scheme-neutral-800:  #c7d7df;
-  --scheme-neutral-900:  #d4e4ec;
-  --scheme-neutral-1000: #e1f2f9;
-  --scheme-neutral-1100: #e7f8ff;
-  --scheme-neutral-1200: #eeffff;
-  --scheme-neutral-600-10: rgba(137,152,159,0.1);
-  --scheme-neutral-600-30: rgba(137,152,159,0.3);
-  --scheme-neutral-600-50: rgba(137,152,159,0.5);
-  /*
-}*/
+  /* Neutral colors - Using near black and light green spectrum */
+  --scheme-neutral-100: #010101;
+  --scheme-neutral-200: #0f0f0f;
+  --scheme-neutral-300: #2a2a2a;
+  --scheme-neutral-400: #4a4a4a;
+  --scheme-neutral-500: #6a6a6a;
+  --scheme-neutral-600: #8a8a8a;
+  --scheme-neutral-700: #aaaaaa;
+  --scheme-neutral-800: #c0c8c1;
+  --scheme-neutral-900: #d3e5d5;
+  --scheme-neutral-1000: #e0ede1;
+  --scheme-neutral-1100: #eef5ef;
+  --scheme-neutral-1200: #f8fbf8;
+  --scheme-neutral-600-10: rgba(138,138,138,0.1);
+  --scheme-neutral-600-30: rgba(138,138,138,0.3);
+  --scheme-neutral-600-50: rgba(138,138,138,0.5);
+}
