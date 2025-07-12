@@ -31,7 +31,7 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth paddingY="24" gap="m">
+      <Column fillWidth gap="m">
         {/* Brand Logo and Location Section */}
         <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="32">
           <Column gap="m" horizontal="center">
