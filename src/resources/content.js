@@ -275,47 +275,106 @@ const gallery = {
   label: "Gallery",
   title: `Studio & Event Gallery – ${person.name}`,
   description: `Behind-the-scenes photos from studio sessions, events, and sound system installations by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  // Studio and event photos from FLORUS Sound Room
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
+      src: "/images/gallery/FLORUS-81.jpg",
+      alt: "FLORUS studio setup and equipment",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
+      src: "/images/gallery/FLORUS-46.jpg",
+      alt: "DJ equipment and mixing session",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
+      src: "/images/gallery/FLORUS-33.jpg",
+      alt: "Sound system configuration",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/FLORUS-9.jpg",
+      alt: "Studio atmosphere and lighting",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
+      src: "/images/gallery/FLORUS-35.jpg",
+      alt: "Professional audio equipment",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/FLORUS-79.jpg",
+      alt: "DJ performance setup",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
+      src: "/images/gallery/FLORUS-26.jpg",
+      alt: "Studio session in progress",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/FLORUS-68.jpg",
+      alt: "Sound engineering workspace",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/FLORUS-59.jpg",
+      alt: "Music production environment",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/FLORUS-5.jpg",
+      alt: "DJ booth and equipment setup",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/FLORUS-10.jpg",
+      alt: "Studio recording session",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/FLORUS-67.jpg",
+      alt: "Audio mixing console",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/FLORUS-54.jpg",
+      alt: "Event sound system setup",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/FLORUS-62.jpg",
+      alt: "Professional studio environment",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/DSC05710.jpg",
+      alt: "Behind the scenes studio shot",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/FLORUS-12.jpg",
+      alt: "DJ equipment and turntables",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/FLORUS-19.jpg",
+      alt: "Sound room atmosphere",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC05705.jpg",
+      alt: "Studio workspace detail",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/FLORUS-20.jpg",
+      alt: "Music production setup",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/FLORUS-58.jpg",
+      alt: "Professional audio gear",
       orientation: "vertical",
     },
   ],
