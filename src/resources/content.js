@@ -18,7 +18,7 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      Stay updated with the latest in sound engineering, production techniques, mixing insights, and 
+      Stay updated with the latest in sound engineering, production techniques, mixing insights, and
       exclusive events from Toronto's premier DJ sound room and creative space.
     </>
   ),
@@ -111,15 +111,15 @@ const about = {
         role: "Lead Sound Engineer & Equipment Provider",
         achievements: [
           <>
-            Designed and implemented a comprehensive multi-stage sound system supporting 40+ artists 
+            Designed and implemented a comprehensive multi-stage sound system supporting 40+ artists
             across a 3-day festival, achieving zero technical failures and pristine audio quality throughout.
           </>,
           <>
-            Deployed custom Pioneer CDJ-3000 and DJM-V10 mixer configurations with advanced DSP processing, 
+            Deployed custom Pioneer CDJ-3000 and DJM-V10 mixer configurations with advanced DSP processing,
             ensuring optimal sound reproduction across diverse genres and performance styles.
           </>,
           <>
-            Managed real-time technical support, equipment rental coordination, and artist liaison services, 
+            Managed real-time technical support, equipment rental coordination, and artist liaison services,
             earning recognition for exceptional professionalism and technical expertise.
           </>,
         ],
@@ -128,8 +128,8 @@ const about = {
           {
             src: "/images/projects/project-01/cover-05.png",
             alt: "DOWest Fest sound system setup",
-            width: 16,
-            height: 9,
+            width: 20,
+            height: 15,
           },
         ],
       },
@@ -139,19 +139,25 @@ const about = {
         role: "Vinyl Specialist & Sound System Designer",
         achievements: [
           <>
-            Curated premium vinyl-focused DJ setups for 25+ artists, featuring legendary Technics 1210 MK5 
+            Curated premium vinyl-focused DJ setups for 25+ artists, featuring legendary Technics 1210 MK5
             turntables paired with modern mixing technology for the ultimate analog experience.
           </>,
           <>
-            Engineered a specialized hybrid sound system combining classic Technics 1210 MK5s with the 
+            Engineered a specialized hybrid sound system combining classic Technics 1210 MK5s with the
             flagship DJM-V10 mixer, delivering warm analog character with contemporary mixing capabilities.
           </>,
           <>
-            Provided on-site technical support and turntable calibration services, ensuring optimal 
+            Provided on-site technical support and turntable calibration services, ensuring optimal
             performance for both veteran vinyl DJs and newcomers to the format.
           </>,
         ],
-        images: [],
+        images: [{
+          src: "/images/projects/project-01/image-01.jpg",
+          alt: "Studio mixing session",
+          width: 20,
+          height: 30,
+        },
+        ],
       },
       {
         company: "Private Studio Sessions",
@@ -159,31 +165,24 @@ const about = {
         role: "Music Producer & Mix Engineer",
         achievements: [
           <>
-            Produced and mixed tracks for emerging Toronto artists across hip-hop, electronic, and R&B genres 
+            Produced and mixed tracks for emerging Toronto artists across hip-hop, electronic, and R&B genres
             using industry-standard analog and digital processing chains.
           </>,
           <>
-            Specialized in beat making with the legendary Akai MPC 1000, creating authentic boom-bap and 
+            Specialized in beat making with the legendary Akai MPC 1000, creating authentic boom-bap and
             contemporary trap productions with impeccable sampling and drum programming.
           </>,
           <>
-            Developed signature mixing techniques combining analog outboard gear with modern DAW workflows, 
+            Developed signature mixing techniques combining analog outboard gear with modern DAW workflows,
             resulting in releases that have gained traction on streaming platforms and radio.
           </>,
         ],
-        images: [
-          {
-            src: "/images/projects/project-01/image-01.jpg",
-            alt: "Studio mixing session",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
     ],
   },
   studies: {
-    display: true, // set to true to show this section
+    display: false, // set to true to show this section
     title: "Education & Certifications",
     institutions: [
       {
@@ -201,7 +200,7 @@ const about = {
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Technical Expertise",
     skills: [
       {
