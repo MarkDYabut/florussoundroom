@@ -126,7 +126,7 @@ const about = {
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
+            src: "/images/projects/project-01/cover-05.png",
             alt: "DOWest Fest sound system setup",
             width: 16,
             height: 9,
@@ -173,7 +173,7 @@ const about = {
         ],
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
+            src: "/images/projects/project-01/image-01.jpg",
             alt: "Studio mixing session",
             width: 16,
             height: 9,

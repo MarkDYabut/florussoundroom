@@ -3,13 +3,21 @@ import Script from "next/script";
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema } from "@once-ui-system/core";
 import { home, about, person, newsletter, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
+import { Mailchimp, AnimatedBackground } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" horizontal="center">
+    <>
+      {/* Animated GIF Background - only on home page */}
+      <AnimatedBackground 
+        lightGif="/gifs/light-background.gif"
+        darkGif="/gifs/dark-background.gif"
+        opacity={0.2}
+      />
+      
+      <Column maxWidth="m" gap="xl" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -107,5 +115,6 @@ export default function Home() {
         strategy="lazyOnload"
       />
     </Column>
+    </>
   );
 }
