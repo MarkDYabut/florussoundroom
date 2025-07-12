@@ -190,6 +190,7 @@ export default function Home() {
         title="Studio Gallery"
         subtitle="Experience the creative atmosphere at FLORUS Sound Room"
         maxImages={8}
+        showHeader={false}
       />
       
       {/* <RevealFx translateY="16" delay={0.6}>

@@ -14,12 +14,14 @@ interface ImageCarouselProps {
   title?: string;
   subtitle?: string;
   maxImages?: number;
+  showHeader?: boolean;
 }
 
 export const ImageCarousel: React.FC<ImageCarouselProps> = ({
   title = "Studio Gallery",
   subtitle = "Behind the scenes at FLORUS Sound Room",
-  maxImages = 12
+  maxImages = 12,
+  showHeader = true
 }) => {
   const [galleryImages, setGalleryImages] = useState<string[]>([]);
 
@@ -47,7 +49,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
   return (
     <RevealFx translateY="16" delay={0.4}>
       <Column fillWidth gap="m" marginBottom="xl">
-        {(title || subtitle) && (
+        {showHeader && (title || subtitle) && (
           <Column gap="s" paddingX="s">
             {title && (
               <Heading as="h2" variant="display-strong-s" wrap="balance">
