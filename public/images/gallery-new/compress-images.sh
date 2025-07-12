@@ -78,8 +78,16 @@ for file in "${image_files[@]}"; do
     if [ "$width" -gt "$MAX_DIMENSION" ] || [ "$height" -gt "$MAX_DIMENSION" ]; then
         echo -e "  ${YELLOW}Resizing from ${width}x${height}${NC}"
         
-        # Resize the image
-        if sips --resampleHeight "$MAX_DIMENSION" --resampleWidth "$MAX_DIMENSION" "$file" > /dev/null 2>&1; then
+        # Resize the image based on which dimension is larger
+        if [ "$width" -gt "$height" ]; then
+            # Landscape: constrain width
+            resize_success=$(sips --resampleWidth "$MAX_DIMENSION" "$file" > /dev/null 2>&1 && echo "true" || echo "false")
+        else
+            # Portrait or square: constrain height
+            resize_success=$(sips --resampleHeight "$MAX_DIMENSION" "$file" > /dev/null 2>&1 && echo "true" || echo "false")
+        fi
+        
+        if [ "$resize_success" = "true" ]; then
             # Get new dimensions and size
             new_width=$(sips -g pixelWidth "$file" 2>/dev/null | tail -1 | awk '{print $2}')
             new_height=$(sips -g pixelHeight "$file" 2>/dev/null | tail -1 | awk '{print $2}')
