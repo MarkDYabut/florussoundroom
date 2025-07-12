@@ -10,3 +10,5 @@ export { ThemeToggle } from "@/components/ThemeToggle";
 export { TwitchChat } from "@/components/TwitchChat";
 export { CustomMDX } from "@/components/mdx";
 export { AnimatedBackground } from "@/components/AnimatedBackground";
+export { Analytics } from "@/components/Analytics";
+export { AnalyticsButton } from "@/components/AnalyticsButton";

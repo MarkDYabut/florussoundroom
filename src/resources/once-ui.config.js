@@ -3,6 +3,12 @@ import { home } from "./content";
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL = "https://demo.magic-portfolio.com";
 
+// Google Analytics configuration
+const analytics = {
+  googleAnalyticsId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-FQPD9EBKLD", // Replace with your GA4 Measurement ID
+  enabled: true, // Set to false to disable analytics in development
+};
+
 const routes = {
   "/": true,
   "/about": true,
@@ -187,4 +193,4 @@ const sameAs = {
   discord: "https://discord.com/invite/5EyAQ4eNdS",
 };
 
-export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };
+export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle, analytics };
