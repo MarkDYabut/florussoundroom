@@ -50,12 +50,12 @@ export default function Home() {
           <RevealFx translateY="16" delay={0.8}>
             <a
               id="Setmore_button_iframe"
-              href="https://markyabut.setmore.com"
+              href="https://florussoundroom.setmore.com"
               style={{ textDecoration: 'none', margin: '32px 0' }}
             >
               <img
                 src="https://assets.setmore.com/setmore/images/2.0/Settings/book-now-black.svg"
-                alt="Book an appointment with mark yabut using Setmore"
+                alt="Book an appointment with FLORUS SOUND ROOM using Setmore"
                 style={{ maxWidth: '200px', height: 'auto', border: 'none' }}
               />
             </a>
