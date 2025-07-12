@@ -1,8 +1,8 @@
 import React from "react";
 import Script from "next/script";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema } from "@once-ui-system/core";
-import { home, about, person, newsletter, baseURL, routes } from "@/resources";
+import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema, Icon, IconButton } from "@once-ui-system/core";
+import { home, about, person, newsletter, baseURL, routes, social } from "@/resources";
 import { Mailchimp, AnimatedBackground, ImageCarousel } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
@@ -32,7 +32,55 @@ export default function Home() {
         }}
       />
       <Column fillWidth paddingY="24" gap="m">
-        <Column maxWidth="s">
+        {/* Brand Logo and Location Section */}
+        <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="32">
+          <Column gap="m" horizontal="center">
+            <Avatar src={person.avatar} size="xl" />
+            <Heading variant="display-strong-xl" wrap="balance" style={{ textAlign: 'center' }}>
+              {person.name}
+            </Heading>
+            <Text variant="display-default-s" onBackground="neutral-weak" style={{ textAlign: 'center' }}>
+              {person.role}
+            </Text>
+            <Flex gap="8" vertical="center" horizontal="center">
+              <Icon onBackground="accent-weak" name="globe" />
+              <Text variant="body-default-m" onBackground="neutral-weak">
+                {person.location}
+              </Text>
+            </Flex>
+            {social.length > 0 && (
+              <Flex paddingTop="20" paddingBottom="8" gap="8" wrap horizontal="center" fitWidth data-border="rounded">
+                {social.map(
+                  (item) =>
+                    item.link && (
+                        <React.Fragment key={item.name}>
+                            <Button
+                                className="s-flex-hide"
+                                key={item.name}
+                                href={item.link}
+                                prefixIcon={item.icon}
+                                label={item.name}
+                                size="s"
+                                weight="default"
+                                variant="secondary"
+                            />
+                            <IconButton
+                                className="s-flex-show"
+                                size="l"
+                                key={`${item.name}-icon`}
+                                href={item.link}
+                                icon={item.icon}
+                                variant="secondary"
+                            />
+                        </React.Fragment>
+                    ),
+                )}
+              </Flex>
+            )}
+          </Column>
+        </RevealFx>
+        
+        <Column fillWidth>
           {home.featured.display && (
             <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
               <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
@@ -41,11 +89,11 @@ export default function Home() {
               </Badge>
             </RevealFx>
           )}
-          <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="16">
+          {/* <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="16">
             <Heading wrap="balance" variant="display-strong-l">
               {home.headline}
             </Heading>
-          </RevealFx>
+          </RevealFx> */}
           {/* Image Row */}
           <RevealFx translateY="12" delay={0.6} fillWidth paddingBottom="24">
             <Row fillWidth gap="12" horizontal="center">

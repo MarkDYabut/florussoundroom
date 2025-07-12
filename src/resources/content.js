@@ -57,7 +57,7 @@ const home = {
   description: `Landing website showcasing brand as a ${person.role}`,
   headline: <>Toronto Hub for DJ Craft & Sound Culture</>,
   featured: {
-    display: true,
+    display: false,
     title: <>Recent project: <strong className="ml-4">Launch of our v1 sound system</strong></>,
     href: "/work/launch-of-our-v1-sound-system",
   },
