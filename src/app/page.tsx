@@ -3,7 +3,7 @@ import Script from "next/script";
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema } from "@once-ui-system/core";
 import { home, about, person, newsletter, baseURL, routes } from "@/resources";
-import { Mailchimp, AnimatedBackground } from "@/components";
+import { Mailchimp, AnimatedBackground, ImageCarousel } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 
@@ -90,6 +90,14 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
+      
+      {/* Image Carousel Section */}
+      <ImageCarousel 
+        title="Studio Gallery"
+        subtitle="Experience the creative atmosphere at FLORUS Sound Room"
+        maxImages={8}
+      />
+      
       {/* <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
