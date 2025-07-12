@@ -11,11 +11,11 @@ export default function Home() {
   return (
     <>
       {/* Animated GIF Background - only on home page */}
-      <AnimatedBackground 
+      {/* <AnimatedBackground 
         lightGif="/gifs/light-background.gif"
         darkGif="/gifs/dark-background.gif"
         opacity={0.2}
-      />
+      /> */}
       
       <Column maxWidth="m" gap="xl" horizontal="center">
       <Schema
@@ -46,19 +46,65 @@ export default function Home() {
               {home.headline}
             </Heading>
           </RevealFx>
+          {/* Image Row */}
+          <RevealFx translateY="12" delay={0.6} fillWidth paddingBottom="24">
+            <Row fillWidth gap="12" horizontal="center">
+              <Flex flex={1}>
+                <img
+                  src="/images/gallery/FLORUS-3.jpg"
+                  alt="FLORUS Sound Room Studio"
+                  style={{ 
+                    width: '100%', 
+                    height: '200px', 
+                    objectFit: 'cover', 
+                    borderRadius: '8px' 
+                  }}
+                />
+              </Flex>
+              <Flex flex={1}>
+                <img
+                  src="/images/projects/project-01/image-01.jpg"
+                  alt="FLORUS Sound Room Equipment"
+                  style={{ 
+                    width: '100%', 
+                    height: '200px', 
+                    objectFit: 'cover', 
+                    borderRadius: '8px' 
+                  }}
+                />
+              </Flex>
+              <Flex flex={1}>
+                <img
+                  src="/images/gallery/FLORUS-23.jpg"
+                  alt="FLORUS Sound Room Atmosphere"
+                  style={{ 
+                    width: '100%', 
+                    height: '200px', 
+                    objectFit: 'cover', 
+                    borderRadius: '8px' 
+                  }}
+                />
+              </Flex>
+            </Row>
+          </RevealFx>
           {/* Setmore Booking Button */}
-          <RevealFx translateY="16" delay={0.8}>
-            <a
+          <RevealFx translateY="16" delay={0.8} fillWidth horizontal="center" paddingBottom="48">
+            <Button
               id="Setmore_button_iframe"
               href="https://florussoundroom.setmore.com"
-              style={{ textDecoration: 'none', margin: '32px 0' }}
+              variant="primary"
+              size="l"
+              weight="strong"
+              fillWidth
+              style={{ 
+                maxWidth: '400px',
+                padding: '16px 32px',
+                fontSize: '18px',
+                fontWeight: 'bold'
+              }}
             >
-              <img
-                src="https://assets.setmore.com/setmore/images/2.0/Settings/book-now-black.svg"
-                alt="Book an appointment with FLORUS SOUND ROOM using Setmore"
-                style={{ maxWidth: '200px', height: 'auto', border: 'none' }}
-              />
-            </a>
+              Book Your Session Now
+            </Button>
           </RevealFx>
           <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="32">
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">

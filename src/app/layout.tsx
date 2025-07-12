@@ -6,7 +6,7 @@ import '@/resources/animated-background.css'
 import classNames from "classnames";
 
 import { Background, Column, Flex, Meta, opacity, SpacingToken } from "@once-ui-system/core";
-import { Footer, Header, RouteGuard, Providers, TwitchChat, Analytics } from '@/components';
+import { Footer, Header, RouteGuard, Providers, TwitchChat, Analytics, SetmoreButton } from '@/components';
 import { baseURL, effects, fonts, style, dataStyle, home } from '@/resources';
 
 export async function generateMetadata() {
@@ -163,23 +163,7 @@ export default async function RootLayout({
             <Footer/>
             {/* Twitch Chat Toggle */}
             <TwitchChat channel="xqc" />
-            <a 
-              style={{
-                position: 'fixed', 
-                right: '-2px', 
-                top: '25%', 
-                display: 'block', 
-                zIndex: 20000
-              }} 
-              id="Setmore_button_iframe" 
-              href="https://florussoundroom.setmore.com"
-            >
-              <img 
-                style={{border: 'none'}}
-                src="https://storage.googleapis.com/full-assets/setmore/images/1.0/Calendar/Setmore-Book-Now.png" 
-                alt="Book an appointment with FLORUS SOUND ROOM using Setmore" 
-              />
-            </a>
+            <SetmoreButton />
           </Column>
         </Providers>
       </Flex>
