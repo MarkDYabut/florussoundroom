@@ -4,6 +4,11 @@
 .animated-background {
   /* Smooth transitions when theme changes */
   transition: opacity 0.5s ease-in-out, filter 0.3s ease-in-out;
+  /* Force hardware acceleration to prevent z-index issues on mobile */
+  transform: translateZ(0);
+  will-change: opacity;
+  /* Ensure it stays in the background layer */
+  isolation: isolate;
 }
 
 /* Enhance the background for different themes */
@@ -36,8 +41,26 @@
 @media (max-width: 768px) {
   .animated-background {
     /* Reduce opacity on mobile for better readability */
-    opacity: 0.15 !important;
+    /* Remove !important to prevent conflicts with React inline styles */
+    --mobile-opacity: 0.15;
   }
+  
+  .animated-background.loaded {
+    opacity: var(--mobile-opacity, 0.15);
+  }
+}
+
+/* iOS-specific fixes to prevent z-index issues during theme transitions */
+.animated-background.ios-device {
+  /* Force compositing layer to prevent z-index bugs */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  /* Shorter transition on iOS to reduce flicker */
+  transition: opacity 0.3s ease-in-out, filter 0.2s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -52,10 +75,13 @@
 .animated-background.loading {
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  /* Ensure background stays behind during loading */
+  z-index: -10;
 }
 
 .animated-background.loaded {
   opacity: var(--bg-opacity, 0.2);
+  z-index: -10;
 }
 
 /* Fallback for when GIF fails to load */
