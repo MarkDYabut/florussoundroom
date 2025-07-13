@@ -69,7 +69,7 @@ const home = {
   },
   subline: (
     <>
-      All-in-one destination in Toronto for professional DJ services, offering dynamic DJ bookings, premium gear rentals, and hands-on lessons to empower aspiring and seasoned artists alike—where sound meets skill in a creative, collaborative space.
+      While our services continue to evolve, our core mission remains: to provide a dynamic space where sound meets skill, empowering artists to create, perform, and connect. Book a studio session now or inquire for other services.
     </>
   ),
 };
@@ -95,15 +95,8 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        FLORUS is a studio and creative platform built
-        with intention. More than a place to practice,
-        FLORUS lives at the intersection of music, culture,
-        and community — offering tools, education, and
-        curated experiences for DJs and sound artists
-        who value craft, individuality, and depth. Every
-        detail, from programming to education is designed
-        to foster growth and preserve the integrity of the
-        art.
+        <p>Before Florus Collective officially came to life, the physical studio space already existed. Our initial motivation was simple: to create a dedicated place where we—Julian, Christian, and Kang—could collaborate, experiment, and share ideas without the pressure of commercial expectations.</p>
+        <p>We found a place in 2024 and after a year, we felt like our dream came true. We had a studio of our own, a space where we had complete control and freedom of our own musical creations. We realized the space could grow into something bigger—a welcoming environment where like-minded artists and producers could come together to express themselves authentically.</p>
       </>
     ),
   },
