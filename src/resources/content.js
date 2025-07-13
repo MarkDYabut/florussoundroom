@@ -97,13 +97,72 @@ const about = {
       <>
         <p>Before Florus Collective officially came to life, the physical studio space already existed. Our initial motivation was simple: to create a dedicated place where we—Julian, Christian, and Kang—could collaborate, experiment, and share ideas without the pressure of commercial expectations.</p>
         <p>We found a place in 2024 and after a year, we felt like our dream came true. We had a studio of our own, a space where we had complete control and freedom of our own musical creations. We realized the space could grow into something bigger—a welcoming environment where like-minded artists and producers could come together to express themselves authentically.</p>
+        <p>One of our first community initiatives was “Nina’s Intro to DJing” workshop at JAYU, which introduced newcomers to turntablism and crate digging in an accessible, welcoming way.</p>
+        <p>We’ve also had the opportunity to extend our presence through collaborations—such as when Toronto jewelry retailer Nick’s Jewellery offered us space during Do West Fest to showcase what Florus does for a wider audience.
+          That event also marked the debut of a custom-built sound system we designed and built from scratch—one of several passion-driven, music-related projects we plan to continue.
+          Projects like this allow us to create unique, DIY platforms for DJs to perform and build community outside of traditional venues, offering more accessible opportunities for engagement, growth, and visibility.
+        </p>
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Recent Projects & Events",
+    title: "Recent Experiences",
     experiences: [
+      {
+        company: "Private DJ Training & Practice Sessions",
+        timeframe: "Ongoing",
+        role: "DJ Instructor & Technical Consultant",
+        achievements: [
+          <>
+            Provide comprehensive DJ training on industry-standard equipment including Pioneer CDJ-3000s,
+            DJM-V10 mixer, and classic Technics 1210 turntables for artists of all skill levels.
+          </>,
+          <>
+            Teach advanced mixing techniques including harmonic mixing, beatmatching, live remixing, and
+            creative transition methods across vinyl, CDJ, and digital formats.
+          </>,
+          <>
+            Offer personalized rekordbox preparation sessions, helping DJs organize their music libraries,
+            set cue points, and develop their unique performance style and workflow.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Private Music Production Sessions",
+        timeframe: "Ongoing",
+        role: "Music Producer & Mix Engineer",
+        achievements: [
+          <>
+            Produced and mixed tracks for emerging Toronto artists across hip-hop, electronic, and R&B genres
+            using industry-standard analog and digital processing chains.
+          </>,
+          <>
+            Specialized in beat making with tools such as the legendary Akai MPC 2000XL, creating authentic boom-bap and
+            contemporary trap productions with innovative sampling and drum programming.
+          </>,
+          <>
+            Developed signature mixing techniques combining analog outboard gear with modern DAW workflows,
+            resulting in releases that have gained traction on streaming platforms and radio.
+          </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/gallery/FLORUS-74.jpg",
+            alt: "Syntesizer setup",
+            width: 20,
+            height: 15,
+          },
+          {
+            src: "/images/gallery/FLORUS-68.jpg",
+            alt: "MPC2000xl setup",
+            width: 20,
+            height: 15,
+          },
+        ],
+      },
       {
         company: "DOWest Fest",
         timeframe: "2025 June 8",
@@ -111,7 +170,7 @@ const about = {
         achievements: [
           <>
             Designed and implemented a comprehensive multi-stage sound system supporting 40+ artists
-            across a 3-day festival, achieving zero technical failures and pristine audio quality throughout.
+            across a 3-day festival, achieving reliable technical performance and clear audio quality throughout.
           </>,
           <>
             Deployed custom Pioneer CDJ-3000 and DJM-V10 mixer configurations with advanced DSP processing,
@@ -119,7 +178,7 @@ const about = {
           </>,
           <>
             Managed real-time technical support, equipment rental coordination, and artist liaison services,
-            earning recognition for exceptional professionalism and technical expertise.
+            earning positive feedback for professionalism and technical knowledge.
           </>,
         ],
         images: [
@@ -146,7 +205,7 @@ const about = {
             flagship DJM-V10 mixer, delivering warm analog character with contemporary mixing capabilities.
           </>,
           <>
-            Provided on-site technical support and turntable calibration services, ensuring optimal
+            Provided on-site technical support and turntable calibration services, helping ensure good
             performance for both veteran vinyl DJs and newcomers to the format.
           </>,
         ],
@@ -157,26 +216,6 @@ const about = {
           height: 30,
         },
         ],
-      },
-      {
-        company: "Private Studio Sessions",
-        timeframe: "Ongoing",
-        role: "Music Producer & Mix Engineer",
-        achievements: [
-          <>
-            Produced and mixed tracks for emerging Toronto artists across hip-hop, electronic, and R&B genres
-            using industry-standard analog and digital processing chains.
-          </>,
-          <>
-            Specialized in beat making with the legendary Akai MPC 1000, creating authentic boom-bap and
-            contemporary trap productions with impeccable sampling and drum programming.
-          </>,
-          <>
-            Developed signature mixing techniques combining analog outboard gear with modern DAW workflows,
-            resulting in releases that have gained traction on streaming platforms and radio.
-          </>,
-        ],
-        images: [],
       },
     ],
   },
