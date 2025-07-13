@@ -13,4 +13,5 @@ export { AnimatedBackground } from "@/components/AnimatedBackground";
 export { Analytics } from "@/components/Analytics";
 export { AnalyticsButton } from "@/components/AnalyticsButton";
 export { ImageCarousel } from "@/components/ImageCarousel";
+export { PersonHeader } from "@/components/PersonHeader";
 export { default as SetmoreButton } from "@/components/SetmoreButton";

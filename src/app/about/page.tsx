@@ -13,6 +13,7 @@ import {
   Schema
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
+import { PersonHeader } from "@/components";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
@@ -78,33 +79,6 @@ export default function About() {
         </Column>
       )}
       <Flex fillWidth mobileDirection="column" horizontal="center">
-        {about.avatar.display && (
-          <Column
-            className={styles.avatar}
-            position="sticky"
-            minWidth="160"
-            paddingX="l"
-            paddingBottom="xl"
-            gap="m"
-            flex={3}
-            horizontal="center"
-          >
-            <Avatar src={person.avatar} size="xl" />
-            <Flex gap="8" vertical="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
-            </Flex>
-            {person.languages.length > 0 && (
-              <Flex wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={language} size="l">
-                    {language}
-                  </Tag>
-                ))}
-              </Flex>
-            )}
-          </Column>
-        )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
           <Column
             id={about.intro.title}
@@ -138,45 +112,7 @@ export default function About() {
                 />
               </Flex>
             )}
-            <Heading className={styles.textAlign} variant="display-strong-xl">
-              {person.name}
-            </Heading>
-            <Text
-              className={styles.textAlign}
-              variant="display-default-xs"
-              onBackground="neutral-weak"
-            >
-              {person.role}
-            </Text>
-            {social.length > 0 && (
-              <Flex className={styles.blockAlign} paddingTop="20" paddingBottom="8" gap="8" wrap horizontal="center" fitWidth data-border="rounded">
-                {social.map(
-                  (item) =>
-                    item.link && (
-                        <React.Fragment key={item.name}>
-                            <Button
-                                className="s-flex-hide"
-                                key={item.name}
-                                href={item.link}
-                                prefixIcon={item.icon}
-                                label={item.name}
-                                size="s"
-                                weight="default"
-                                variant="secondary"
-                            />
-                            <IconButton
-                                className="s-flex-show"
-                                size="l"
-                                key={`${item.name}-icon`}
-                                href={item.link}
-                                icon={item.icon}
-                                variant="secondary"
-                            />
-                        </React.Fragment>
-                    ),
-                )}
-              </Flex>
-            )}
+            <PersonHeader disableRevealFx={true} variant="default" showSocial={true} className={styles.textAlign} />
           </Column>
 
           {about.intro.display && (
