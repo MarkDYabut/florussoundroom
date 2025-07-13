@@ -1,9 +1,9 @@
 import React from "react";
 import Script from "next/script";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema, Icon, IconButton } from "@once-ui-system/core";
+import { Heading, Flex, Text, Button, Avatar, Column, Badge, Row, Meta, Schema, Icon, IconButton } from "@once-ui-system/core";
 import { home, about, person, newsletter, baseURL, routes, social } from "@/resources";
-import { Mailchimp, AnimatedBackground, ImageCarousel, PersonHeader, VideoPlayer } from "@/components";
+import { Mailchimp, AnimatedBackground, ImageCarousel, PersonHeader, VideoPlayer, ConditionalRevealFx } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/services/Posts";
 
@@ -42,12 +42,12 @@ export default function Home() {
         
         <Column fillWidth>
           {home.featured.display && (
-            <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
+            <ConditionalRevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
               <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
                 href={home.featured.href}>
                 <Row paddingY="2">{home.featured.title}</Row>
               </Badge>
-            </RevealFx>
+            </ConditionalRevealFx>
           )}
           {/* <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="16">
             <Heading wrap="balance" variant="display-strong-l">
@@ -55,7 +55,7 @@ export default function Home() {
             </Heading>
           </RevealFx> */}
           {/* Image Row */}
-          <RevealFx translateY="12" delay={0.6} fillWidth paddingBottom="24">
+          <ConditionalRevealFx translateY="12" delay={0.6} fillWidth paddingBottom="24">
             <Row fillWidth gap="12" horizontal="center">
               <Flex flex={1}>
                 <img
@@ -94,9 +94,9 @@ export default function Home() {
                 />
               </Flex>
             </Row>
-          </RevealFx>
+          </ConditionalRevealFx>
           {/* Setmore Booking Button */}
-          <RevealFx translateY="16" delay={0.8} fillWidth horizontal="center" paddingBottom="48">
+          <ConditionalRevealFx translateY="16" delay={0.8} fillWidth horizontal="center" paddingBottom="48">
             <Button
               id="Setmore_button_iframe"
               href="https://florussoundroom.setmore.com"
@@ -113,13 +113,13 @@ export default function Home() {
             >
               Book Your Session Now
             </Button>
-          </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="32">
+          </ConditionalRevealFx>
+          <ConditionalRevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="32">
             <Text wrap="wrap" align="center" onBackground="neutral-weak" variant="heading-default-xl">
               {home.subline}
             </Text>
-          </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="start" paddingLeft="12">
+          </ConditionalRevealFx>
+          <ConditionalRevealFx paddingTop="12" delay={0.4} horizontal="start" paddingLeft="12">
             <Button
               id="about"
               data-border="rounded"
@@ -141,7 +141,7 @@ export default function Home() {
                 {about.title}
               </Flex>
             </Button>
-          </RevealFx>
+          </ConditionalRevealFx>
         </Column>
       </Column>
       

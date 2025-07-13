@@ -8,6 +8,7 @@ export {
   services,
   work,
   gallery,
+  animations,
 } from "./content";
 
 export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle, analytics } from "./once-ui.config";

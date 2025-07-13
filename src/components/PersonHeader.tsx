@@ -1,13 +1,13 @@
 import React from "react";
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Icon, IconButton } from "@once-ui-system/core";
+import { Heading, Flex, Text, Button, Avatar, Column, Icon, IconButton } from "@once-ui-system/core";
 import { person, social } from "@/resources";
 import { Location } from "@/components/Location";
+import { ConditionalRevealFx } from "./ConditionalRevealFx";
 
 interface PersonHeaderProps {
   showSocial?: boolean;
   variant?: "default" | "compact" | "about";
   className?: string;
-  disableRevealFx?: boolean;
   pageTitle?: string; // Add prop for page title
   headerTitle?: string; // H1 title
   description?: string | React.ReactNode; // Description paragraph
@@ -17,7 +17,6 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
   showSocial = true, 
   variant = "default",
   className = "",
-  disableRevealFx = false,
   pageTitle,
   headerTitle,
   description
@@ -136,17 +135,10 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
     </Column>
   );
 
-  if (disableRevealFx) {
-    return (
-      <Flex fillWidth horizontal="center" paddingBottom="32" className={className}>
-        {content}
-      </Flex>
-    );
-  }
-
+  // Always use ConditionalRevealFx - it will handle the animation logic based on the route
   return (
-    <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="32" className={className}>
+    <ConditionalRevealFx translateY="4" fillWidth horizontal="center" paddingBottom="32" className={className}>
       {content}
-    </RevealFx>
+    </ConditionalRevealFx>
   );
 };

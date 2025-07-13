@@ -34,7 +34,6 @@ export default function Gallery() {
         }}
       />
       <PersonHeader 
-        disableRevealFx={true} 
         variant="default" 
         showSocial={true} 
         pageTitle={gallery.label}

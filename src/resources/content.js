@@ -19,6 +19,28 @@ const person = {
   languages: [], // optional: Leave the array empty if you don't want to display languages
 };
 
+// Global animation configuration
+const animations = {
+  // Enable RevealFx animations only on specific pages
+  enableRevealFx: {
+    homepage: true,    // Enable on homepage (/)
+    about: false,      // Disable on about page
+    gallery: false,    // Disable on gallery page
+    services: false,   // Disable on services pages
+    work: false,       // Disable on work pages
+    default: false,    // Default for other pages
+  },
+  // Function to check if RevealFx should be enabled for a given path
+  shouldEnableRevealFx: function(pathname) {
+    if (pathname === '/' || pathname === '') return this.enableRevealFx.homepage;
+    if (pathname.startsWith('/about')) return this.enableRevealFx.about;
+    if (pathname.startsWith('/gallery')) return this.enableRevealFx.gallery;
+    if (pathname.startsWith('/services')) return this.enableRevealFx.services;
+    if (pathname.startsWith('/work')) return this.enableRevealFx.work;
+    return this.enableRevealFx.default;
+  }
+};
+
 const newsletter = {
   display: true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
@@ -317,4 +339,4 @@ const gallery = {
   imageFolder: "images/gallery",
 };
 
-export { person, social, newsletter, home, about, services, work, gallery };
+export { person, social, newsletter, home, about, services, work, gallery, animations };

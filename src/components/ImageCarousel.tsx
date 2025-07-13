@@ -6,9 +6,9 @@ import {
   Column, 
   Heading, 
   Text, 
-  Button, 
-  RevealFx 
+  Button
 } from "@once-ui-system/core";
+import { ConditionalRevealFx } from './ConditionalRevealFx';
 
 interface ImageCarouselProps {
   title?: string;
@@ -47,7 +47,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
   }
 
   return (
-    <RevealFx translateY="16" delay={0.4}>
+    <ConditionalRevealFx translateY="16" delay={0.4}>
       <Column fillWidth gap="m" marginBottom="xl">
         {showHeader && (title || subtitle) && (
           <Column gap="s" paddingX="s">
@@ -80,6 +80,6 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
           </Button>
         </Column>
       </Column>
-    </RevealFx>
+    </ConditionalRevealFx>
   );
 };

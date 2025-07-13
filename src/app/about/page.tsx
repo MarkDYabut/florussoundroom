@@ -113,7 +113,6 @@ export default function About() {
               </Flex>
             )}
             <PersonHeader 
-              disableRevealFx={true} 
               variant="default" 
               showSocial={true} 
               pageTitle={about.label}
