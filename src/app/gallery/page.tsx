@@ -2,6 +2,7 @@ import { Flex, Meta, Schema, Column } from "@once-ui-system/core";
 import MasonryGrid from "@/components/gallery/MasonryGrid";
 import { PersonHeader } from "@/components";
 import { baseURL, gallery, person } from "@/resources";
+import { getImagesFromFolder } from "@/utils/galleryUtils";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -14,6 +15,9 @@ export async function generateMetadata() {
 }
 
 export default function Gallery() {
+  // Load all images from the specified folder
+  const images = getImagesFromFolder(gallery.imageFolder);
+
   return (
     <Column maxWidth="l" gap="xl" horizontal="center">
       <Schema
@@ -30,7 +34,7 @@ export default function Gallery() {
         }}
       />
       <PersonHeader disableRevealFx={true} variant="default" showSocial={true} />
-      <MasonryGrid />
+      <MasonryGrid images={images} />
     </Column>
   );
 }
