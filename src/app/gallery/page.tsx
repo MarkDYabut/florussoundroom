@@ -1,6 +1,6 @@
 import { Flex, Meta, Schema, Column } from "@once-ui-system/core";
 import MasonryGrid from "@/components/gallery/MasonryGrid";
-import { PersonHeader } from "@/components";
+import { PersonHeader, VideoPlayer } from "@/components";
 import { baseURL, gallery, person } from "@/resources";
 import { getImagesFromFolder } from "@/utils/galleryUtils";
 
@@ -34,6 +34,17 @@ export default function Gallery() {
         }}
       />
       <PersonHeader disableRevealFx={true} variant="default" showSocial={true} />
+      <VideoPlayer 
+        src="/videos/blend-6.mp4"
+        alt="Gallery showcase video"
+        aspectRatio="9 / 16"
+        controls={true}
+        muted={false}
+        autoPlay={true}
+        loop={true}
+        poster="/images/gallery/FLORUS-52.jpg"
+        marginBottom="xl"
+      />
       <MasonryGrid images={images} />
     </Column>
   );

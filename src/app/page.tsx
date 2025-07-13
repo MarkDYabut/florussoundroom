@@ -154,7 +154,7 @@ export default function Home() {
         <VideoPlayer
           src="/videos/studio-v2.mp4"
           alt="FLORUS Sound Room Studio Tour"
-          aspectRatio="16 / 9"
+          aspectRatio="9 / 16"
           radius="l"
           controls={true}
           autoPlay={true}
