@@ -8,20 +8,24 @@ interface PersonHeaderProps {
   variant?: "default" | "compact" | "about";
   className?: string;
   disableRevealFx?: boolean;
+  pageTitle?: string; // Add prop for page title
 }
 
 export const PersonHeader: React.FC<PersonHeaderProps> = ({ 
   showSocial = true, 
   variant = "default",
   className = "",
-  disableRevealFx = false
+  disableRevealFx = false,
+  pageTitle
 }) => {
+  // Determine the display title based on whether pageTitle is provided
+  const displayTitle = pageTitle || person.name;
   if (variant === "about") {
     // Simplified header for about page without RevealFx
     return (
       <Column fillWidth gap="m" horizontal="center" className={className}>
         <Heading variant="display-strong-xl" style={{ textAlign: 'center' }}>
-          {person.name}
+          {displayTitle}
         </Heading>
         <Text variant="display-default-xs" onBackground="neutral-weak" style={{ textAlign: 'center' }}>
           {person.role}
@@ -64,7 +68,7 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
     <Column gap="m" horizontal="center">
       <Avatar src={person.avatar} size="xl" />
       <Heading variant="display-strong-xl" wrap="balance" style={{ textAlign: 'center' }}>
-        {person.name}
+        {displayTitle}
       </Heading>
       <Text variant="display-default-s" onBackground="neutral-weak" style={{ textAlign: 'center' }}>
         {person.role}

@@ -33,7 +33,7 @@ export default function Gallery() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <PersonHeader disableRevealFx={true} variant="default" showSocial={true} />
+      <PersonHeader disableRevealFx={true} variant="default" showSocial={true} pageTitle={gallery.label} />
       <VideoPlayer 
         src="/videos/blend-6.mp4"
         alt="Gallery showcase video"

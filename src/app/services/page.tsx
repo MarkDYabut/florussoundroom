@@ -1,5 +1,5 @@
 import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
-import { Mailchimp } from "@/components";
+import { Mailchimp, PersonHeader } from "@/components";
 import { Posts } from "@/components/services/Posts";
 import { baseURL, services, person, newsletter } from "@/resources";
 
@@ -29,6 +29,7 @@ export default function Services() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
+      <PersonHeader variant="default" showSocial={false} pageTitle={services.label} />
       <Heading marginBottom="l" variant="display-strong-s">
         {services.title}
       </Heading>

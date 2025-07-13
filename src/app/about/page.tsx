@@ -112,7 +112,7 @@ export default function About() {
                 />
               </Flex>
             )}
-            <PersonHeader disableRevealFx={true} variant="default" showSocial={true} className={styles.textAlign} />
+            <PersonHeader disableRevealFx={true} variant="default" showSocial={true} pageTitle={about.label} className={styles.textAlign} />
           </Column>
 
           {about.intro.display && (

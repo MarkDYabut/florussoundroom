@@ -1,6 +1,7 @@
 import { Column, Meta, Schema } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { Projects } from "@/components/work/Projects";
+import { PersonHeader } from "@/components";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -28,6 +29,7 @@ export default function Work() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
+      <PersonHeader variant="default" showSocial={true} pageTitle={work.label} />
       <Projects />
     </Column>
   );
