@@ -156,7 +156,7 @@ export default function Home() {
           alt="FLORUS Sound Room Studio Tour"
           aspectRatio="16 / 9"
           radius="l"
-          controls={false}
+          controls={true}
           autoPlay={true}
           muted={true}
           loop={true}

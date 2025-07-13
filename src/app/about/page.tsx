@@ -128,7 +128,7 @@ export default function About() {
               alt="FLORUS Sound Room Studio Experience"
               aspectRatio="16 / 9"
               radius="m"
-              controls={false}
+              controls={true}
               autoPlay={true}
               muted={false}
               loop={true}

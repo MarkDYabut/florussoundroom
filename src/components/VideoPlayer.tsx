@@ -124,6 +124,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
         controls={controls}
         loop={loop}
         muted={muted}
+        playsInline
         style={videoStyle}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
@@ -133,7 +134,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
         Your browser does not support the video tag.
       </video>
       
-      {!controls && !autoPlay && (
+      {!controls && (
         <Flex
           position="absolute"
           style={{
