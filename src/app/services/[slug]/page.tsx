@@ -58,7 +58,7 @@ export default async function Services({
       <Row fillWidth horizontal="center">
         <Column as="section" maxWidth="xs" gap="l">
           <Schema
-            as="blogPosting"
+            as="article"
             baseURL={baseURL}
             path={`${services.path}/${post.slug}`}
             title={post.metadata.title}

@@ -13,11 +13,11 @@ export async function generateMetadata() {
   });
 }
 
-export default function Blog() {
+export default function Services() {
   return (
     <Column maxWidth="s">
       <Schema
-        as="blogPosting"
+        as="webPage"
         baseURL={baseURL}
         title={services.title}
         description={services.description}

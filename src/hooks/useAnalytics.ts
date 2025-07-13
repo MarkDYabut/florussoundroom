@@ -8,7 +8,7 @@ type EventName =
   | 'booking_inquiry'
   | 'newsletter_signup'
   | 'project_view'
-  | 'blog_read'
+  | 'service_read'
   | 'contact_form_submit'
   | 'equipment_inquiry'
   | 'social_click'
