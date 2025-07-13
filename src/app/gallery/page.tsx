@@ -1,5 +1,6 @@
-import { Flex, Meta, Schema } from "@once-ui-system/core";
+import { Flex, Meta, Schema, Column } from "@once-ui-system/core";
 import MasonryGrid from "@/components/gallery/MasonryGrid";
+import { PersonHeader } from "@/components";
 import { baseURL, gallery, person } from "@/resources";
 
 export async function generateMetadata() {
@@ -14,7 +15,7 @@ export async function generateMetadata() {
 
 export default function Gallery() {
   return (
-    <Flex maxWidth="l">
+    <Column maxWidth="l" gap="xl" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -28,7 +29,8 @@ export default function Gallery() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
+      <PersonHeader disableRevealFx={true} variant="default" showSocial={true} />
       <MasonryGrid />
-    </Flex>
+    </Column>
   );
 }
