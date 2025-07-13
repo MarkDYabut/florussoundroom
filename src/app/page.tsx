@@ -3,7 +3,7 @@ import Script from "next/script";
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema, Icon, IconButton } from "@once-ui-system/core";
 import { home, about, person, newsletter, baseURL, routes, social } from "@/resources";
-import { Mailchimp, AnimatedBackground, ImageCarousel, PersonHeader } from "@/components";
+import { Mailchimp, AnimatedBackground, ImageCarousel, PersonHeader, VideoPlayer } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 
@@ -140,6 +140,31 @@ export default function Home() {
         </Column>
       </Column>
       
+
+      {/* Studio Video Showcase */}
+      <Column fillWidth maxWidth="l" gap="m">
+        {/* <Column fillWidth gap="4" horizontal="center">
+          <Heading as="h2" variant="display-strong-s" wrap="balance" align="center">
+            Experience FLORUS Sound Room
+          </Heading>
+          <Text variant="body-default-l" onBackground="neutral-weak" align="center">
+            Discover our state-of-the-art studio and professional DJ equipment
+          </Text>
+        </Column> */}
+        <VideoPlayer
+          src="/videos/studio-v2.mp4"
+          alt="FLORUS Sound Room Studio Tour"
+          aspectRatio="16 / 9"
+          radius="l"
+          controls={false}
+          autoPlay={true}
+          muted={true}
+          loop={true}
+          marginBottom="24"
+        />
+      </Column>
+
+
       {/* Image Carousel Section */}
       <ImageCarousel 
         title="Studio Gallery"
@@ -147,7 +172,6 @@ export default function Home() {
         maxImages={8}
         showHeader={false}
       />
-      
       {/* <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>

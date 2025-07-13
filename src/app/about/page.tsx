@@ -13,7 +13,7 @@ import {
   Schema
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
-import { PersonHeader } from "@/components";
+import { PersonHeader, VideoPlayer } from "@/components";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
@@ -120,6 +120,22 @@ export default function About() {
               {about.intro.description}
             </Column>
           )}
+
+          {/* Studio Video Showcase */}
+          <Column fillWidth marginBottom="xl">
+            <VideoPlayer
+              src="/videos/florus-do-west.mp4"
+              alt="FLORUS Sound Room Studio Experience"
+              aspectRatio="16 / 9"
+              radius="m"
+              controls={false}
+              autoPlay={true}
+              muted={false}
+              loop={true}
+              poster="/images/gallery/FLORUS-3.jpg"
+              marginBottom="16"
+            />
+          </Column>
 
           {about.work.display && (
             <>
