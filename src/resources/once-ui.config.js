@@ -12,8 +12,8 @@ const analytics = {
 const routes = {
   "/": true,
   "/about": true,
-  "/work": true,
-  "/services": true,
+  "/work": false,
+  "/services": false,
   "/gallery": true,
 };
 
