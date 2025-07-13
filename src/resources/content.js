@@ -56,18 +56,18 @@ const social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   {
-    name: "SoundCloud",
-    icon: "github",
-    link: "https://soundcloud.com/florussoundroom",
+    name: "Facebook",
+    icon: "facebook",
+    link: "https://www.facebook.com/profile.php?id=61573054162949",
   },
   {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/florussoundroom",
+    name: "YouTube",
+    icon: "youtube",
+    link: "https://www.youtube.com/@florussoundroom",
   },
   {
     name: "Instagram",
-    icon: "threads",
+    icon: "instagram",
     link: "https://www.instagram.com/florussoundroom/",
   },
   {
