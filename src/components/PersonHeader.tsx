@@ -1,6 +1,7 @@
 import React from "react";
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Icon, IconButton } from "@once-ui-system/core";
 import { person, social } from "@/resources";
+import { Location } from "@/components/Location";
 
 interface PersonHeaderProps {
   showSocial?: boolean;
@@ -68,12 +69,13 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
       <Text variant="display-default-s" onBackground="neutral-weak" style={{ textAlign: 'center' }}>
         {person.role}
       </Text>
-      <Flex gap="8" vertical="center" horizontal="center">
-        <Icon onBackground="accent-weak" name="globe" />
-        <Text variant="body-default-m" onBackground="neutral-weak">
-          {person.location.split('/').pop()}
-        </Text>
-      </Flex>
+      <Location 
+        address={person.address.street}
+        city={person.address.city}
+        country={person.address.country}
+        variant="default"
+        showIcon={true}
+      />
       {showSocial && social.length > 0 && (
         <Flex paddingTop="20" paddingBottom="8" gap="8" wrap horizontal="center" fitWidth data-border="rounded">
           {social.map(

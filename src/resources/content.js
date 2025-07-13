@@ -10,6 +10,12 @@ const person = {
   avatar: "/images/avatar.webp",
   email: "florussoundroom@gmail.com",
   location: "America/Toronto", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  address: {
+    street: "146 Thirtieth Street",
+    city: "Etobicoke",
+    state: "ON",
+    country: "Canada"
+  },
   languages: [], // optional: Leave the array empty if you don't want to display languages
 };
 
