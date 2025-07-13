@@ -15,26 +15,26 @@ export function Posts({
     thumbnail = false,
     direction
 }: PostsProps) {
-    let allBlogs = getPosts(['src', 'app', 'blog', 'posts']);
+    let allServices = getPosts(['src', 'app', 'services', 'posts']);
 
-    const sortedBlogs = allBlogs.sort((a, b) => {
+    const sortedServices = allServices.sort((a, b) => {
         return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
     });
 
-    const displayedBlogs = range
-        ? sortedBlogs.slice(
+    const displayedServices = range
+        ? sortedServices.slice(
               range[0] - 1,
-              range.length === 2 ? range[1] : sortedBlogs.length 
+              range.length === 2 ? range[1] : sortedServices.length 
           )
-        : sortedBlogs;
+        : sortedServices;
 
     return (
         <>
-            {displayedBlogs.length > 0 && (
+            {displayedServices.length > 0 && (
                 <Grid
                     columns={columns} mobileColumns="1"
                     fillWidth marginBottom="40" gap="12">
-                    {displayedBlogs.map((post) => (
+                    {displayedServices.map((post) => (
                         <Post
                             key={post.slug}
                             post={post}

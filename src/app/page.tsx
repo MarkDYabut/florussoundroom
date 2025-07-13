@@ -5,7 +5,7 @@ import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta
 import { home, about, person, newsletter, baseURL, routes, social } from "@/resources";
 import { Mailchimp, AnimatedBackground, ImageCarousel, PersonHeader, VideoPlayer } from "@/components";
 import { Projects } from "@/components/work/Projects";
-import { Posts } from "@/components/blog/Posts";
+import { Posts } from "@/components/services/Posts";
 
 export default function Home() {
   return (
@@ -175,11 +175,11 @@ export default function Home() {
       {/* <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
-      {routes["/blog"] && (
+      {routes["/services"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l" paddingTop="24">
             <Heading as="h2" variant="display-strong-xs" wrap="balance">
-              Latest from the blog
+              Latest from our services
             </Heading>
           </Flex>
           <Flex flex={3} paddingX="20">

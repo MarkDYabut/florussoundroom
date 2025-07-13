@@ -258,13 +258,13 @@ const about = {
   },
 };
 
-const blog = {
-  path: "/blog",
-  label: "Blog",
-  title: "Sound Engineering Insights & Tutorials",
-  description: `Read the latest production tips, mixing techniques, and industry insights from ${person.name}`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+const services = {
+  path: "/services",
+  label: "Services",
+  title: "Professional Sound Engineering Services",
+  description: `Explore our professional sound engineering services, mixing techniques, and industry expertise from ${person.name}`,
+  // Create new service posts by adding a new .mdx file to app/services/posts
+  // All services will be listed on the /services route
 };
 
 const work = {
@@ -272,7 +272,7 @@ const work = {
   label: "Work",
   title: `Projects & Services – ${person.name}`,
   description: `Sound engineering projects, DJ services, and equipment installations by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
+  // Create new project pages by adding a new .mdx file to app/work/projects
   // All projects will be listed on the /home and /work routes
 };
 
@@ -285,4 +285,4 @@ const gallery = {
   imageFolder: "images/gallery",
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, services, work, gallery };
