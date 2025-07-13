@@ -270,7 +270,7 @@ const services = {
 const work = {
   path: "/work",
   label: "Work",
-  title: `Projects & Services – ${person.name}`,
+  title: `Past Work Experiences`,
   description: `Sound engineering projects, DJ services, and equipment installations by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/work/projects
   // All projects will be listed on the /home and /work routes
@@ -279,7 +279,7 @@ const work = {
 const gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Studio & Event Gallery – ${person.name}`,
+  title: `Studio & Event Gallery`,
   description: `Behind-the-scenes photos from studio sessions, events, and sound system installations by ${person.name}`,
   // Specify the folder path relative to public/ to automatically load all images
   imageFolder: "images/gallery",

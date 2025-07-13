@@ -33,7 +33,12 @@ export default function Home() {
       />
       <Column fillWidth gap="m">
         {/* Brand Logo and Location Section */}
-        <PersonHeader variant={"default"} showSocial={true} />
+        <PersonHeader 
+          variant={"default"} 
+          showSocial={true}
+          headerTitle="Toronto Hub for DJ Craft & Sound Culture"
+          description="All-in-one destination in Toronto for professional DJ services, offering dynamic DJ bookings, premium gear rentals, and hands-on lessons to empower aspiring and seasoned artists alike—where sound meets skill in a creative, collaborative space."
+        />
         
         <Column fillWidth>
           {home.featured.display && (

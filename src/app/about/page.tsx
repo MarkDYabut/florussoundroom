@@ -112,7 +112,15 @@ export default function About() {
                 />
               </Flex>
             )}
-            <PersonHeader disableRevealFx={true} variant="default" showSocial={true} pageTitle={about.label} className={styles.textAlign} />
+            <PersonHeader 
+              disableRevealFx={true} 
+              variant="default" 
+              showSocial={true} 
+              pageTitle={about.label}
+              headerTitle="Who Are We?"
+              description="FLORUS is a sound studio and creative platform built with intention. More than a place to practice, FLORUS lives at the intersection of music, culture, and community — offering tools, education, and curated experiences for DJs and sound artists who value craft, individuality, and depth."
+              className={styles.textAlign} 
+            />
           </Column>
 
           {about.intro.display && (

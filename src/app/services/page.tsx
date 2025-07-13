@@ -29,7 +29,13 @@ export default function Services() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <PersonHeader variant="default" showSocial={false} pageTitle={services.label} />
+      <PersonHeader 
+        variant="default" 
+        showSocial={false} 
+        pageTitle={services.label}
+        headerTitle="Professional Sound Engineering Services"
+        description="Explore our comprehensive range of professional sound engineering services, mixing techniques, and industry expertise designed to elevate your audio projects and events."
+      />
       <Heading marginBottom="l" variant="display-strong-s">
         {services.title}
       </Heading>

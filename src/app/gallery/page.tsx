@@ -33,7 +33,14 @@ export default function Gallery() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <PersonHeader disableRevealFx={true} variant="default" showSocial={true} pageTitle={gallery.label} />
+      <PersonHeader 
+        disableRevealFx={true} 
+        variant="default" 
+        showSocial={true} 
+        pageTitle={gallery.label}
+        headerTitle="Studio & Event Gallery"
+        description="Behind-the-scenes photos from studio sessions, events, and sound system installations showcasing our work and the creative environment we've built."
+      />
       <VideoPlayer 
         src="/videos/blend-6.mp4"
         alt="Gallery showcase video"

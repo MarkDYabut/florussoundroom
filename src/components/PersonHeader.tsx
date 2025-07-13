@@ -9,6 +9,8 @@ interface PersonHeaderProps {
   className?: string;
   disableRevealFx?: boolean;
   pageTitle?: string; // Add prop for page title
+  headerTitle?: string; // H1 title
+  description?: string | React.ReactNode; // Description paragraph
 }
 
 export const PersonHeader: React.FC<PersonHeaderProps> = ({ 
@@ -16,7 +18,9 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
   variant = "default",
   className = "",
   disableRevealFx = false,
-  pageTitle
+  pageTitle,
+  headerTitle,
+  description
 }) => {
   // Determine the display title based on whether pageTitle is provided
   const displayTitle = pageTitle || person.name;
@@ -30,6 +34,16 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
         <Text variant="display-default-xs" onBackground="neutral-weak" style={{ textAlign: 'center' }}>
           {person.role}
         </Text>
+        {headerTitle && (
+          <Heading as="h1" variant="heading-strong-xl" style={{ textAlign: 'center' }} marginTop="l">
+            {headerTitle}
+          </Heading>
+        )}
+        {description && (
+          <Text variant="body-default-l" onBackground="neutral-medium" style={{ textAlign: 'center', maxWidth: '600px' }} marginTop="s">
+            {description}
+          </Text>
+        )}
         {showSocial && social.length > 0 && (
           <Flex paddingTop="20" paddingBottom="8" gap="8" wrap horizontal="center" fitWidth data-border="rounded">
             {social.map(
@@ -80,6 +94,16 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
         variant="default"
         showIcon={true}
       />
+      {headerTitle && (
+        <Heading as="h1" variant="heading-strong-xl" style={{ textAlign: 'center' }} marginTop="l">
+          {headerTitle}
+        </Heading>
+      )}
+      {description && (
+        <Text variant="body-default-l" onBackground="neutral-medium" style={{ textAlign: 'center', maxWidth: '600px' }} marginTop="s">
+          {description}
+        </Text>
+      )}
       {showSocial && social.length > 0 && (
         <Flex paddingTop="20" paddingBottom="8" gap="8" wrap horizontal="center" fitWidth data-border="rounded">
           {social.map(

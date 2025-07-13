@@ -29,7 +29,13 @@ export default function Work() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <PersonHeader variant="default" showSocial={true} pageTitle={work.label} />
+      <PersonHeader 
+        variant="default" 
+        showSocial={true} 
+        pageTitle={work.label}
+        headerTitle="Past Work & Project Experiences"
+        description="Sound engineering projects, DJ services, and equipment installations that showcase our expertise in delivering exceptional audio experiences for events, venues, and artists."
+      />
       <Projects />
     </Column>
   );
