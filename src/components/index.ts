@@ -17,4 +17,5 @@ export { ImageCarousel } from "@/components/ImageCarousel";
 export { PersonHeader } from "@/components/PersonHeader";
 export { VideoPlayer } from "@/components/VideoPlayer";
 export { ConditionalRevealFx } from "@/components/ConditionalRevealFx";
+export { Sitemap } from "@/components/Sitemap";
 export { default as SetmoreButton } from "@/components/SetmoreButton";

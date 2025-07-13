@@ -1,6 +1,7 @@
 import { Flex, IconButton, SmartLink, Text } from "@once-ui-system/core";
 import { person, social } from "@/resources";
 import { Location } from "@/components/Location";
+import { Sitemap } from "@/components/Sitemap";
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {
@@ -12,8 +13,21 @@ export const Footer = () => {
       fillWidth
       padding="8"
       horizontal="center"
-      mobileDirection="column"
+      direction="column"
     >
+      {/* Sitemap Section */}
+      <Sitemap />
+      
+      {/* Divider */}
+      <Flex
+        maxWidth="m"
+        fillWidth
+        paddingX="16"
+        style={{
+          borderTop: "1px solid var(--neutral-alpha-weak)",
+        }}
+      />
+
       <Flex
         className={styles.mobile}
         maxWidth="m"
