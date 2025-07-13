@@ -71,7 +71,7 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
       <Flex gap="8" vertical="center" horizontal="center">
         <Icon onBackground="accent-weak" name="globe" />
         <Text variant="body-default-m" onBackground="neutral-weak">
-          {person.location}
+          {person.location.split('/').pop()}
         </Text>
       </Flex>
       {showSocial && social.length > 0 && (
