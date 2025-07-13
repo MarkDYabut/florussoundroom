@@ -162,7 +162,7 @@ export default async function RootLayout({
             </Flex>
             <Footer/>
             {/* Twitch Chat Toggle */}
-            <TwitchChat channel="xqc" />
+            {/* <TwitchChat channel="xqc" /> */}
             <SetmoreButton />
           </Column>
         </Providers>

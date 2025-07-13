@@ -163,7 +163,7 @@ export const Header = () => {
             textVariant="body-default-s"
             gap="20"
           >
-            <Flex hide="s">{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
+            <Flex>{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
           </Flex>
         </Flex>
       </Flex>
