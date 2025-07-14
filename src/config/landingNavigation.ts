@@ -38,8 +38,8 @@ export const landingNavigation = {
   ] as NavigationItem[]
 };
 
-// Alternative full configuration (with mix of custom images and icons)
-export const landingNavigationFull = {
+// Alternative configuration with flower logos
+export const landingNavigationFlower = {
   title: "FLORUS Sound Room",
   subtitle: "Toronto Hub for DJ Craft & Sound Culture",
   
@@ -50,7 +50,7 @@ export const landingNavigationFull = {
     {
       id: "about",
       label: "About Us",
-      image: "/logos/default-florus.webp", // Custom logo
+      image: "/logos/flower-1.png", // Flower logo variant 1
       href: "/about",
       description: "Learn about our studio",
       subtext: "Discover Our Story"
@@ -58,7 +58,7 @@ export const landingNavigationFull = {
     {
       id: "booking",
       label: "Book Session",
-      image: "/logos/book-now-florus.webp", // Custom logo
+      image: "/logos/flower-2.png", // Flower logo variant 2
       href: "https://florussoundroom.setmore.com",
       external: true,
       description: "Schedule your session",
@@ -67,7 +67,7 @@ export const landingNavigationFull = {
     {
       id: "gallery",
       label: "Studio Gallery",
-      image: "/logos/default-florus.webp", // Custom logo image
+      image: "/logos/flower-3.png", // Flower logo variant 3
       href: "/gallery",
       description: "View our space",
       subtext: "Explore Gallery"
@@ -76,7 +76,10 @@ export const landingNavigationFull = {
 };
 
 // Custom configuration examples:
-// To use the full version with all options, import landingNavigationFull instead
+// landingNavigation: Uses default-florus.webp and book-now-florus.webp logos
+// landingNavigationFlower: Uses flower-1.png, flower-2.png, and flower-3.png logos
+// Both configurations can be imported and used on the same page to show different appearances
+// To use the flower version, import landingNavigationFlower instead
 // To use custom logo images, set the "image" property with path to your logo
 // To use regular icons, set the "icon" property to any available IconName
 // You can mix both images and icons in the same configuration

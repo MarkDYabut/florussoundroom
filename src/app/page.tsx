@@ -2,7 +2,7 @@ import React from "react";
 import { Column, Schema } from "@once-ui-system/core";
 import { home, about, person, baseURL } from "@/resources";
 import { LandingNavigation, PersonHeader } from "@/components";
-import { landingNavigationFull } from "@/config/landingNavigation";
+import { landingNavigation, landingNavigationFlower } from "@/config/landingNavigation";
 
 export default function Home() {
   return (
@@ -28,11 +28,19 @@ export default function Home() {
         />
       </Column>
 
-      {/* Custom Landing Navigation */}
+      {/* Custom Landing Navigation - Florus Branding */}
       <Column fillWidth gap="m" horizontal="center" vertical="center" style={{ minHeight: "50vh" }}>
         <LandingNavigation 
-          items={landingNavigationFull.items}
-          showSubtext={landingNavigationFull.showSubtext}
+          items={landingNavigation.items}
+          showSubtext={landingNavigation.showSubtext}
+        />
+      </Column>
+
+      {/* Custom Landing Navigation - Flower Logos */}
+      <Column fillWidth gap="m" horizontal="center" vertical="center" style={{ minHeight: "50vh" }}>
+        <LandingNavigation 
+          items={landingNavigationFlower.items}
+          showSubtext={landingNavigationFlower.showSubtext}
         />
       </Column>
     </Column>

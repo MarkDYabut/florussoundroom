@@ -42,15 +42,19 @@ export const ConditionalRevealFx: React.FC<ConditionalRevealFxProps> = ({
     if (horizontal === 'start') combinedClassName += ' horizontal-start';
     if (horizontal === 'end') combinedClassName += ' horizontal-end';
 
+    // Build inline styles for padding and margin
+    const inlineStyles: React.CSSProperties = {};
+    if (paddingTop) inlineStyles.paddingTop = `var(--static-space-${paddingTop})`;
+    if (paddingBottom) inlineStyles.paddingBottom = `var(--static-space-${paddingBottom})`;
+    if (paddingLeft) inlineStyles.paddingLeft = `var(--static-space-${paddingLeft})`;
+    if (paddingRight) inlineStyles.paddingRight = `var(--static-space-${paddingRight})`;
+    if (marginTop) inlineStyles.marginTop = `var(--static-space-${marginTop})`;
+    if (marginBottom) inlineStyles.marginBottom = `var(--static-space-${marginBottom})`;
+
     return (
       <div 
         className={combinedClassName}
-        data-padding-top={paddingTop}
-        data-padding-bottom={paddingBottom}
-        data-padding-left={paddingLeft}
-        data-padding-right={paddingRight}
-        data-margin-bottom={marginBottom}
-        data-margin-top={marginTop}
+        style={inlineStyles}
       >
         {children}
       </div>

@@ -26,7 +26,7 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
   if (variant === "about") {
     // Simplified header for about page without RevealFx
     return (
-      <Column fillWidth gap="m" horizontal="center" className={className}>
+      <Column fillWidth gap="m" horizontal="center" paddingTop="48" className={className}>
         <Heading variant="display-strong-xl" style={{ textAlign: 'center' }}>
           {displayTitle}
         </Heading>
@@ -79,7 +79,7 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
   if (variant === "compact") {
     // Compact variant - logo only
     return (
-      <ConditionalRevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16" className={className}>
+      <ConditionalRevealFx translateY="4" fillWidth horizontal="center" paddingTop="32" paddingBottom="16" className={className}>
         <Column gap="s" horizontal="center">
           <Avatar src={person.avatar} size="xl" />
         </Column>
@@ -148,7 +148,7 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
 
   // Always use ConditionalRevealFx - it will handle the animation logic based on the route
   return (
-    <ConditionalRevealFx translateY="4" fillWidth horizontal="center" paddingBottom="32" className={className}>
+    <ConditionalRevealFx translateY="4" fillWidth horizontal="center" paddingTop="48" paddingBottom="32" className={className}>
       {content}
     </ConditionalRevealFx>
   );
