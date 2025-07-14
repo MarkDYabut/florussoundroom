@@ -5,6 +5,9 @@ export const landingNavigation = {
   title: "FLORUS Sound Room",
   subtitle: "Toronto Hub for DJ Craft & Sound Culture",
   
+  // Optional criteria for showing small text below logos
+  showSubtext: true, // Set to false to hide all subtext
+  
   // Navigation items with custom logo images
   items: [
     {
@@ -12,7 +15,8 @@ export const landingNavigation = {
       label: "About Us",
       image: "/logos/default-florus.webp", // Custom logo image
       href: "/about",
-      description: "Learn about our studio"
+      description: "Learn about our studio",
+      subtext: "Discover Our Story" // Small text below logo
     },
     {
       id: "booking",
@@ -20,7 +24,16 @@ export const landingNavigation = {
       image: "/logos/book-now-florus.webp", // Custom booking logo
       href: "https://florussoundroom.setmore.com",
       external: true,
-      description: "Schedule your session"
+      description: "Schedule your session",
+      subtext: "Reserve Your Slot" // Small text below logo
+    },
+    {
+      id: "gallery",
+      label: "Studio Gallery",
+      image: "/logos/default-florus.webp", // Custom logo image
+      href: "/gallery",
+      description: "View our space",
+      subtext: "Explore Gallery"
     }
   ] as NavigationItem[]
 };
@@ -30,13 +43,17 @@ export const landingNavigationFull = {
   title: "FLORUS Sound Room",
   subtitle: "Toronto Hub for DJ Craft & Sound Culture",
   
+  // Optional criteria for showing small text below logos
+  showSubtext: true, // Set to false to hide all subtext
+  
   items: [
     {
       id: "about",
       label: "About Us",
       image: "/logos/default-florus.webp", // Custom logo
       href: "/about",
-      description: "Learn about our studio"
+      description: "Learn about our studio",
+      subtext: "Discover Our Story"
     },
     {
       id: "booking",
@@ -44,21 +61,16 @@ export const landingNavigationFull = {
       image: "/logos/book-now-florus.webp", // Custom logo
       href: "https://florussoundroom.setmore.com",
       external: true,
-      description: "Schedule your session"
+      description: "Schedule your session",
+      subtext: "Reserve Your Slot"
     },
     {
       id: "gallery",
       label: "Studio Gallery",
-      icon: "gallery", // Regular icon
+      image: "/logos/default-florus.webp", // Custom logo image
       href: "/gallery",
-      description: "View our space"
-    },
-    {
-      id: "services",
-      label: "Services",
-      icon: "rocket", // Regular icon
-      href: "/services",
-      description: "What we offer"
+      description: "View our space",
+      subtext: "Explore Gallery"
     }
   ] as NavigationItem[]
 };
@@ -70,4 +82,5 @@ export const landingNavigationFull = {
 // You can mix both images and icons in the same configuration
 // Logo images should be placed in /public/logos/ directory
 // To add external links, set external: true
+// To show small text below logos, set showSubtext: true and add subtext property to items
 // To modify styling, update the component props or add custom CSS

@@ -2,7 +2,7 @@ import React from "react";
 import { Column, Schema } from "@once-ui-system/core";
 import { home, about, person, baseURL } from "@/resources";
 import { LandingNavigation, PersonHeader } from "@/components";
-import { landingNavigation } from "@/config/landingNavigation";
+import { landingNavigationFull } from "@/config/landingNavigation";
 
 export default function Home() {
   return (
@@ -31,7 +31,8 @@ export default function Home() {
       {/* Custom Landing Navigation */}
       <Column fillWidth gap="m" horizontal="center" vertical="center" style={{ minHeight: "50vh" }}>
         <LandingNavigation 
-          items={landingNavigation.items}
+          items={landingNavigationFull.items}
+          showSubtext={landingNavigationFull.showSubtext}
         />
       </Column>
     </Column>

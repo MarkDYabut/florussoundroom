@@ -1,0 +1,26 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinningImage {
+  animation: spin 15s linear infinite;
+  transition: transform 0.3s ease;
+}
+
+.spinningImage:hover {
+  animation-duration: 3s;
+}
+
+.spinningIcon {
+  animation: spin 15s linear infinite;
+  transition: transform 0.3s ease;
+}
+
+.spinningIcon:hover {
+  animation-duration: 3s;
+}
