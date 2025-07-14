@@ -76,6 +76,17 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
     );
   }
 
+  if (variant === "compact") {
+    // Compact variant - logo only
+    return (
+      <ConditionalRevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16" className={className}>
+        <Column gap="s" horizontal="center">
+          <Avatar src={person.avatar} size="xl" />
+        </Column>
+      </ConditionalRevealFx>
+    );
+  }
+
   // Default variant for index page
   const content = (
     <Column gap="m" horizontal="center">
