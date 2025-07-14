@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Column, Flex, Icon, Text, Button } from "@once-ui-system/core";
 import { IconName } from "@/resources/icons";
@@ -5,7 +7,8 @@ import { IconName } from "@/resources/icons";
 export interface NavigationItem {
   id: string;
   label: string;
-  icon: IconName;
+  icon?: IconName;
+  image?: string; // Path to custom image
   href: string;
   external?: boolean;
   description?: string;
@@ -41,31 +44,61 @@ export function LandingNavigation({ items, title, subtitle, showLabels = false }
         wrap
         horizontal="center" 
         vertical="center"
-        style={{ maxWidth: "600px" }}
+        style={{ 
+          maxWidth: "800px",
+          gap: "clamp(16px, 4vw, 32px)"
+        }}
       >
         {items.map((item) => (
-          <Button
+          <div
             key={item.id}
-            href={item.href}
-            variant="secondary"
-            size="l"
             style={{
-              minWidth: "100px",
-              minHeight: "100px",
+              minWidth: "clamp(140px, 18vw, 160px)",
+              minHeight: "clamp(140px, 18vw, 160px)",
               borderRadius: "50%",
-              padding: "32px",
+              padding: "clamp(30px, 5vw, 45px)",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center"
+              justifyContent: "center",
+              background: "transparent",
+              backdropFilter: "blur(8px)",
+              transition: "transform 0.2s ease, opacity 0.2s ease",
+              cursor: "pointer"
             }}
-            {...(item.external && { target: "_blank", rel: "noopener noreferrer" })}
+            onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
+              e.currentTarget.style.transform = "scale(1.05)";
+              e.currentTarget.style.opacity = "0.8";
+            }}
+            onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.opacity = "1";
+            }}
+            onClick={() => {
+              if (item.external) {
+                window.open(item.href, "_blank", "noopener noreferrer");
+              } else {
+                window.location.href = item.href;
+              }
+            }}
           >
-            <Icon 
-              name={item.icon} 
-              size="xl" 
-              onBackground="neutral-strong"
-            />
-          </Button>
+            {item.image ? (
+              <img
+                src={item.image}
+                alt={item.label}
+                style={{
+                  width: "clamp(80px, 10vw, 100px)",
+                  height: "clamp(80px, 10vw, 100px)",
+                  objectFit: "contain"
+                }}
+              />
+            ) : item.icon ? (
+              <Icon 
+                name={item.icon} 
+                size="xl" 
+                onBackground="neutral-strong"
+              />
+            ) : null}
+          </div>
         ))}
       </Flex>
     </Column>

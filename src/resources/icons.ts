@@ -53,6 +53,9 @@ export const iconLibrary: Record<string, IconType> = {
   rocket: HiOutlineRocketLaunch,
   message: HiChatBubbleLeftRight,
   close: HiXMark,
+  // New logo icons
+  booking: HiCalendarDays, // Using calendar for booking
+  default: PiHouseDuotone, // Using home for default/about
 };
 
 export type IconLibrary = typeof iconLibrary;
