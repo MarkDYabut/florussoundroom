@@ -1,0 +1,107 @@
+/* Animated Background Styles */
+
+/* Base animated background styling */
+.animated-background {
+  /* Smooth transitions when theme changes */
+  transition: opacity 0.5s ease-in-out, filter 0.3s ease-in-out;
+  /* Force hardware acceleration to prevent z-index issues on mobile */
+  transform: translateZ(0);
+  will-change: opacity;
+  /* Ensure it stays in the background layer */
+  isolation: isolate;
+}
+
+/* Enhance the background for different themes */
+[data-theme="light"] .animated-background {
+  /* Slightly desaturate for light theme */
+  filter: saturate(0.8) brightness(1.1);
+}
+
+[data-theme="dark"] .animated-background {
+  /* Slightly darken and increase contrast for dark theme */
+  filter: saturate(0.9) brightness(0.8) contrast(1.1);
+}
+
+/* Home page specific styling */
+.home-page {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure content is readable over animated background */
+.home-page .content-overlay {
+  background: rgba(var(--page-rgb), 0.85);
+  backdrop-filter: blur(2px);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animated-background {
+    /* Reduce opacity on mobile for better readability */
+    /* Remove !important to prevent conflicts with React inline styles */
+    --mobile-opacity: 0.15;
+  }
+  
+  .animated-background.loaded {
+    opacity: var(--mobile-opacity, 0.15);
+  }
+}
+
+/* iOS-specific fixes to prevent z-index issues during theme transitions */
+.animated-background.ios-device {
+  /* Force compositing layer to prevent z-index bugs */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  /* Shorter transition on iOS to reduce flicker */
+  transition: opacity 0.3s ease-in-out, filter 0.2s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-background {
+    /* Respect user's preference for reduced motion */
+    animation: none;
+    background-image: none !important;
+  }
+}
+
+/* Loading state */
+.animated-background.loading {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  /* Ensure background stays behind during loading */
+  z-index: -10;
+}
+
+.animated-background.loaded {
+  opacity: var(--bg-opacity, 0.2);
+  z-index: -10;
+}
+
+/* Fallback for when GIF fails to load */
+.animated-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--brand-background-weak-rgb), 0.1) 0%,
+    rgba(var(--accent-background-weak-rgb), 0.1) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.animated-background.error::before {
+  opacity: 1;
+}

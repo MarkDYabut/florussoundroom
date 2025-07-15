@@ -10,12 +10,18 @@ import {
   Tag,
   Text,
   Meta,
-  Schema
+  Schema,
+  Badge,
+  Row
 } from "@once-ui-system/core";
-import { baseURL, about, person, social } from "@/resources";
+import { baseURL, about, person, social, home, newsletter, routes } from "@/resources";
+import { PersonHeader, VideoPlayer, ImageCarousel, ConditionalRevealFx, Mailchimp } from "@/components";
+import { Projects } from "@/components/work/Projects";
+import { Posts } from "@/components/services/Posts";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
+import Script from "next/script";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -78,33 +84,6 @@ export default function About() {
         </Column>
       )}
       <Flex fillWidth mobileDirection="column" horizontal="center">
-        {about.avatar.display && (
-          <Column
-            className={styles.avatar}
-            position="sticky"
-            minWidth="160"
-            paddingX="l"
-            paddingBottom="xl"
-            gap="m"
-            flex={3}
-            horizontal="center"
-          >
-            <Avatar src={person.avatar} size="xl" />
-            <Flex gap="8" vertical="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
-            </Flex>
-            {person.languages.length > 0 && (
-              <Flex wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={language} size="l">
-                    {language}
-                  </Tag>
-                ))}
-              </Flex>
-            )}
-          </Column>
-        )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
           <Column
             id={about.intro.title}
@@ -138,45 +117,124 @@ export default function About() {
                 />
               </Flex>
             )}
-            <Heading className={styles.textAlign} variant="display-strong-xl">
-              {person.name}
-            </Heading>
-            <Text
-              className={styles.textAlign}
-              variant="display-default-xs"
-              onBackground="neutral-weak"
-            >
-              {person.role}
-            </Text>
-            {social.length > 0 && (
-              <Flex className={styles.blockAlign} paddingTop="20" paddingBottom="8" gap="8" wrap horizontal="center" fitWidth data-border="rounded">
-                {social.map(
-                  (item) =>
-                    item.link && (
-                        <React.Fragment key={item.name}>
-                            <Button
-                                className="s-flex-hide"
-                                key={item.name}
-                                href={item.link}
-                                prefixIcon={item.icon}
-                                label={item.name}
-                                size="s"
-                                weight="default"
-                                variant="secondary"
-                            />
-                            <IconButton
-                                className="s-flex-show"
-                                size="l"
-                                key={`${item.name}-icon`}
-                                href={item.link}
-                                icon={item.icon}
-                                variant="secondary"
-                            />
-                        </React.Fragment>
-                    ),
-                )}
+            <PersonHeader 
+              variant="default" 
+              showSocial={true} 
+              pageTitle={about.label}
+              headerTitle="Toronto Hub for DJ Craft & Sound Culture"
+              description="All-in-one destination in Toronto for professional DJ services, offering dynamic DJ bookings, premium gear rentals, and hands-on lessons to empower aspiring and seasoned artists alike—where sound meets skill in a creative, collaborative space."
+              className={styles.textAlign} 
+            />
+          </Column>
+
+          {/* Featured Badge Section from Homepage */}
+          {home.featured.display && (
+            <ConditionalRevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
+              <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
+                href={home.featured.href}>
+                <Row paddingY="2">{home.featured.title}</Row>
+              </Badge>
+            </ConditionalRevealFx>
+          )}
+
+          {/* Image Gallery Row from Homepage */}
+          <ConditionalRevealFx translateY="12" delay={0.6} fillWidth paddingBottom="24">
+            <Row fillWidth gap="12" horizontal="center">
+              <Flex flex={1}>
+                <img
+                  src="/images/gallery/FLORUS-3.jpg"
+                  alt="FLORUS Sound Room Studio"
+                  style={{ 
+                    width: '100%', 
+                    height: '200px', 
+                    objectFit: 'cover', 
+                    borderRadius: '8px' 
+                  }}
+                />
               </Flex>
-            )}
+              <Flex flex={1}>
+                <img
+                  src="/images/projects/project-01/image-01.jpg"
+                  alt="FLORUS Sound Room Equipment"
+                  style={{ 
+                    width: '100%', 
+                    height: '200px', 
+                    objectFit: 'cover', 
+                    borderRadius: '8px' 
+                  }}
+                />
+              </Flex>
+              <Flex flex={1}>
+                <img
+                  src="/images/gallery/FLORUS-23.jpg"
+                  alt="FLORUS Sound Room Atmosphere"
+                  style={{ 
+                    width: '100%', 
+                    height: '200px', 
+                    objectFit: 'cover', 
+                    borderRadius: '8px' 
+                  }}
+                />
+              </Flex>
+            </Row>
+          </ConditionalRevealFx>
+
+          {/* Setmore Booking Button from Homepage */}
+          <ConditionalRevealFx translateY="16" delay={0.8} fillWidth horizontal="center" paddingBottom="48">
+            <Button
+              id="Setmore_button_iframe"
+              href="https://florussoundroom.setmore.com"
+              variant="primary"
+              size="l"
+              weight="strong"
+              fillWidth
+              style={{ 
+                maxWidth: '400px',
+                padding: '16px 32px',
+                fontSize: '18px',
+                fontWeight: 'bold'
+              }}
+            >
+              Book Your Session Now
+            </Button>
+          </ConditionalRevealFx>
+
+          {/* Subline from Homepage */}
+          <ConditionalRevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="32">
+            <Text wrap="wrap" align="center" onBackground="neutral-weak" variant="heading-default-xl">
+              {home.subline}
+            </Text>
+          </ConditionalRevealFx>
+
+          {/* Studio Video Showcase from Homepage */}
+          <Column fillWidth maxWidth="l" gap="m" marginBottom="xl">
+            <VideoPlayer
+              src="/videos/studio-v2.mp4"
+              alt="FLORUS Sound Room Studio Tour"
+              aspectRatio="9 / 16"
+              radius="l"
+              controls={true}
+              autoPlay={true}
+              muted={true}
+              loop={true}
+              marginBottom="24"
+            />
+          </Column>
+
+          {/* Image Carousel from Homepage */}
+          <Column fillWidth marginBottom="xl">
+            <ImageCarousel 
+              title="Studio Gallery"
+              subtitle="Experience the creative atmosphere at FLORUS Sound Room"
+              maxImages={8}
+              showHeader={false}
+            />
+          </Column>
+
+          <Column fillWidth marginBottom="xl">
+            <Heading as="h2" variant="display-strong-s" marginBottom="m">
+              Who Are We?
+            </Heading>
           </Column>
 
           {about.intro.display && (
@@ -184,6 +242,22 @@ export default function About() {
               {about.intro.description}
             </Column>
           )}
+
+          {/* Secondary Studio Video (from about page) */}
+          <Column fillWidth marginBottom="xl">
+            <VideoPlayer
+              src="/videos/florus-do-west.mp4"
+              alt="FLORUS Sound Room Studio Experience"
+              aspectRatio="16 / 9"
+              radius="m"
+              controls={true}
+              autoPlay={true}
+              muted={true}
+              loop={true}
+              poster="/images/gallery/FLORUS-3.jpg"
+              marginBottom="16"
+            />
+          </Column>
 
           {about.work.display && (
             <>
@@ -317,6 +391,16 @@ export default function About() {
           )}
         </Column>
       </Flex>
+
+      {/* Newsletter from Homepage (if enabled) */}
+      {newsletter.display && <Mailchimp newsletter={newsletter} />}
+
+      {/* Setmore Booking Script */}
+      <Script
+        id="setmore_script"
+        src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"
+        strategy="lazyOnload"
+      />
     </Column>
   );
 }

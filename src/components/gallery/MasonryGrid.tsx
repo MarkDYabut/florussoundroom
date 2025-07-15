@@ -3,9 +3,13 @@
 import Masonry from "react-masonry-css";
 import { Media } from "@once-ui-system/core";
 import styles from "./Gallery.module.scss";
-import { gallery } from "@/resources";
+import { GalleryImage } from "@/utils/galleryUtils";
 
-export default function MasonryGrid() {
+interface MasonryGridProps {
+  images: GalleryImage[];
+}
+
+export default function MasonryGrid({ images }: MasonryGridProps) {
   const breakpointColumnsObj = {
     default: 2,
     720: 1,
@@ -17,7 +21,7 @@ export default function MasonryGrid() {
       className={styles.masonryGrid}
       columnClassName={styles.masonryGridColumn}
     >
-      {gallery.images.map((image, index) => (
+      {images.map((image, index) => (
         <Media
           priority={index < 10}
           sizes="(max-width: 560px) 100vw, 50vw"

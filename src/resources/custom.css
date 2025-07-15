@@ -5,54 +5,232 @@
   /* #010101 - Near black */
   /* #325C5B - Dark teal/green */
   
-  /* Brand colors - Using dark green as primary */
-  --scheme-brand-100: #010101;
-  --scheme-brand-200: #0a1b0c;
-  --scheme-brand-300: #1a2d1e;
-  --scheme-brand-400: #2a4030;
-  --scheme-brand-500: #325c5b;
-  --scheme-brand-600: #3b7d46;
-  --scheme-brand-700: #4a9555;
-  --scheme-brand-800: #7bb584;
-  --scheme-brand-900: #a8cdb0;
-  --scheme-brand-1000: #d3e5d5;
-  --scheme-brand-1100: #e6f2e7;
-  --scheme-brand-1200: #f0f8f1;
-  --scheme-brand-600-10: rgba(59,125,70,0.1);
-  --scheme-brand-600-30: rgba(59,125,70,0.3);
-  --scheme-brand-600-50: rgba(59,125,70,0.5);
+  /* FORCE ALL NEUTRAL COLORS TO BLACK FOR TEXT */
+  --scheme-neutral-100: #000000 !important;
+  --scheme-neutral-200: #000000 !important;
+  --scheme-neutral-300: #000000 !important;
+  --scheme-neutral-400: #000000 !important;
+  --scheme-neutral-500: #000000 !important;
+  --scheme-neutral-600: #000000 !important;
+  --scheme-neutral-700: #000000 !important;
+  --scheme-neutral-800: #000000 !important;
+  --scheme-neutral-900: #000000 !important;
+  --scheme-neutral-1000: #000000 !important;
+  --scheme-neutral-1100: #000000 !important;
+  --scheme-neutral-1200: #000000 !important;
+  
+  /* Brand colors - Corrected order for proper light/dark theme mapping */
+  --scheme-brand-100: #f0f8f1;
+  --scheme-brand-200: #e6f2e7;
+  --scheme-brand-300: #d3e5d5;
+  --scheme-brand-400: #a8cdb0;
+  --scheme-brand-500: #7bb584;
+  --scheme-brand-600: #4a9555;
+  --scheme-brand-700: #3b7d46;
+  --scheme-brand-800: #325c5b;
+  --scheme-brand-900: #2a4030;
+  --scheme-brand-1000: #1a2d1e;
+  --scheme-brand-1100: #0a1b0c;
+  --scheme-brand-1200: #010101;
+  --scheme-brand-600-10: rgba(74,149,85,0.1);
+  --scheme-brand-600-30: rgba(74,149,85,0.3);
+  --scheme-brand-600-50: rgba(74,149,85,0.5);
 
-  /* Accent colors - Using dark teal */
-  --scheme-accent-100: #010101;
-  --scheme-accent-200: #091413;
-  --scheme-accent-300: #1a2625;
-  --scheme-accent-400: #2a3837;
-  --scheme-accent-500: #325c5b;
-  --scheme-accent-600: #3e736f;
-  --scheme-accent-700: #4d8a85;
-  --scheme-accent-800: #7ba8a5;
-  --scheme-accent-900: #a8c6c4;
-  --scheme-accent-1000: #d3e5d5;
-  --scheme-accent-1100: #e6f2f1;
-  --scheme-accent-1200: #f0f8f8;
-  --scheme-accent-600-10: rgba(50,92,91,0.1);
-  --scheme-accent-600-30: rgba(50,92,91,0.3);
-  --scheme-accent-600-50: rgba(50,92,91,0.5);
+  /* Accent colors - Corrected order */
+  --scheme-accent-100: #f0f8f8;
+  --scheme-accent-200: #e6f2f1;
+  --scheme-accent-300: #d3e5d5;
+  --scheme-accent-400: #a8c6c4;
+  --scheme-accent-500: #7ba8a5;
+  --scheme-accent-600: #4d8a85;
+  --scheme-accent-700: #3e736f;
+  --scheme-accent-800: #325c5b;
+  --scheme-accent-900: #2a3837;
+  --scheme-accent-1000: #1a2625;
+  --scheme-accent-1100: #091413;
+  --scheme-accent-1200: #010101;
+  --scheme-accent-600-10: rgba(77,138,133,0.1);
+  --scheme-accent-600-30: rgba(77,138,133,0.3);
+  --scheme-accent-600-50: rgba(77,138,133,0.5);
 
-  /* Neutral colors - Using near black and light green spectrum */
-  --scheme-neutral-100: #010101;
-  --scheme-neutral-200: #0f0f0f;
-  --scheme-neutral-300: #2a2a2a;
-  --scheme-neutral-400: #4a4a4a;
-  --scheme-neutral-500: #6a6a6a;
-  --scheme-neutral-600: #8a8a8a;
-  --scheme-neutral-700: #aaaaaa;
-  --scheme-neutral-800: #c0c8c1;
-  --scheme-neutral-900: #d3e5d5;
-  --scheme-neutral-1000: #e0ede1;
-  --scheme-neutral-1100: #eef5ef;
-  --scheme-neutral-1200: #f8fbf8;
-  --scheme-neutral-600-10: rgba(138,138,138,0.1);
-  --scheme-neutral-600-30: rgba(138,138,138,0.3);
-  --scheme-neutral-600-50: rgba(138,138,138,0.5);
+  /* Neutral colors - Corrected order */
+  --scheme-neutral-100: #f8fbf8;
+  --scheme-neutral-200: #eef5ef;
+  --scheme-neutral-300: #e0ede1;
+  --scheme-neutral-400: #d3e5d5;
+  --scheme-neutral-500: #c0c8c1;
+  --scheme-neutral-600: #aaaaaa;
+  --scheme-neutral-700: #8a8a8a;
+  --scheme-neutral-800: #6a6a6a;
+  --scheme-neutral-900: #4a4a4a;
+  --scheme-neutral-1000: #2a2a2a;
+  --scheme-neutral-1100: #0f0f0f;
+  --scheme-neutral-1200: #010101;
+  --scheme-neutral-600-10: rgba(170,170,170,0.1);
+  --scheme-neutral-600-30: rgba(170,170,170,0.3);
+  --scheme-neutral-600-50: rgba(170,170,170,0.5);
+}
+
+/* Text colors for proper contrast in light theme */
+[data-theme="light"] {
+  /* Main text colors - dark colors for light backgrounds */
+  --neutral-on-background-strong: #000000 !important; /* Pure black for main text */
+  --neutral-on-background-medium: #000000 !important; /* Pure black for secondary text */
+  --neutral-on-background-weak: #000000 !important; /* Pure black for subtle text */
+  
+  /* Brand text colors */
+  --brand-on-background-strong: var(--scheme-brand-800); /* #325c5b - dark green for brand text */
+  --brand-on-background-medium: var(--scheme-brand-700); /* #3b7d46 - medium green */
+  --brand-on-background-weak: var(--scheme-brand-600); /* #4a9555 - lighter green */
+  
+  /* Text on solid brand backgrounds */
+  --brand-on-solid-strong: var(--scheme-brand-100); /* #f0f8f1 - light text on dark brand */
+  --brand-on-solid-medium: var(--scheme-brand-200); /* #e6f2e7 */
+  
+  /* Accent text colors */
+  --accent-on-background-strong: var(--scheme-accent-800); /* #325c5b */
+  --accent-on-background-medium: var(--scheme-accent-700); /* #3e736f */
+  --accent-on-background-weak: var(--scheme-accent-600); /* #4d8a85 */
+  
+  /* Text on solid accent backgrounds */
+  --accent-on-solid-strong: var(--scheme-accent-100); /* #f0f8f8 */
+  --accent-on-solid-medium: var(--scheme-accent-200); /* #e6f2f1 */
+}
+
+/* Dark theme text colors (reversed for dark backgrounds) */
+[data-theme="dark"] {
+  /* Main text colors - light colors for dark backgrounds */
+  --neutral-on-background-strong: var(--scheme-neutral-100); /* #f8fbf8 - lightest for main text */
+  --neutral-on-background-medium: var(--scheme-neutral-300); /* #e0ede1 - medium light for secondary text */
+  --neutral-on-background-weak: var(--scheme-neutral-500); /* #c0c8c1 - darker light for subtle text */
+  
+  /* Brand text colors */
+  --brand-on-background-strong: var(--scheme-brand-300); /* #d3e5d5 - light green for brand text */
+  --brand-on-background-medium: var(--scheme-brand-400); /* #a8cdb0 - medium light green */
+  --brand-on-background-weak: var(--scheme-brand-500); /* #7bb584 - darker light green */
+  
+  /* Text on solid brand backgrounds */
+  --brand-on-solid-strong: var(--scheme-brand-1200); /* #010101 - dark text on light brand */
+  --brand-on-solid-medium: var(--scheme-brand-1100); /* #0a1b0c */
+  
+  /* Accent text colors */
+  --accent-on-background-strong: var(--scheme-accent-300); /* #d3e5d5 */
+  --accent-on-background-medium: var(--scheme-accent-400); /* #a8c6c4 */
+  --accent-on-background-weak: var(--scheme-accent-500); /* #7ba8a5 */
+  
+  /* Text on solid accent backgrounds */
+  --accent-on-solid-strong: var(--scheme-accent-1200); /* #010101 */
+  --accent-on-solid-medium: var(--scheme-accent-1100); /* #091413 */
+}
+
+/* Global overflow prevention */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Force white background */
+[data-theme="light"] {
+  --page-background: #ffffff !important;
+  --page-background-rgb: 255, 255, 255 !important;
+  --neutral-background-weak: #ffffff !important;
+  --neutral-background-medium: #ffffff !important;
+  --neutral-background-strong: #ffffff !important;
+  --brand-background-weak: #ffffff !important;
+  --brand-background-medium: #ffffff !important;
+  --brand-background-strong: #ffffff !important;
+  --accent-background-weak: #ffffff !important;
+  --accent-background-medium: #ffffff !important;
+  --accent-background-strong: #ffffff !important;
+}
+
+[data-theme="dark"] {
+  --page-background: #ffffff !important;
+  --page-background-rgb: 255, 255, 255 !important;
+  --neutral-background-weak: #ffffff !important;
+  --neutral-background-medium: #ffffff !important;
+  --neutral-background-strong: #ffffff !important;
+  --brand-background-weak: #ffffff !important;
+  --brand-background-medium: #ffffff !important;
+  --brand-background-strong: #ffffff !important;
+  --accent-background-weak: #ffffff !important;
+  --accent-background-medium: #ffffff !important;
+  --accent-background-strong: #ffffff !important;
+}
+
+/* Ensure body and html have white background */
+html, body {
+  background-color: #ffffff !important;
+}
+
+/* Force the main column to have white background */
+[data-background="page"] {
+  background-color: #ffffff !important;
+}
+
+/* Override any background effects */
+.animated-background,
+.animated-background::before,
+.animated-background::after {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* Force any gradient or background elements to be white */
+[data-background] {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Force all text to be black - comprehensive override */
+[data-theme="light"] {
+  /* Override any potential Once UI text color variables */
+  --text-color: #000000 !important;
+  --primary-text: #000000 !important;
+  --secondary-text: #000000 !important;
+  --body-text: #000000 !important;
+  --heading-text: #000000 !important;
+  
+  /* Ensure neutral colors are black for text */
+  --neutral-text-strong: #000000 !important;
+  --neutral-text-medium: #000000 !important;
+  --neutral-text-weak: #000000 !important;
+  --neutral-text: #000000 !important;
+  
+  /* Force any "on background" variants */
+  --on-background: #000000 !important;
+  --on-surface: #000000 !important;
+  --on-primary: #000000 !important;
+}
+
+/* Direct CSS override for common text elements */
+[data-theme="light"] * {
+  /* Force text color on all elements in light theme */
+  color: #000000 !important;
+}
+
+/* Override for specific text elements that might have different selectors */
+[data-theme="light"] p,
+[data-theme="light"] span,
+[data-theme="light"] div,
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6,
+[data-theme="light"] a,
+[data-theme="light"] li,
+[data-theme="light"] td,
+[data-theme="light"] th,
+[data-theme="light"] label,
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] button {
+  color: #000000 !important;
 }

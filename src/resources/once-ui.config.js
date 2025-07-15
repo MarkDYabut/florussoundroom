@@ -3,23 +3,37 @@ import { home } from "./content";
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL = "https://demo.magic-portfolio.com";
 
+// Google Analytics configuration
+const analytics = {
+  googleAnalyticsId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-FQPD9EBKLD", // Replace with your GA4 Measurement ID
+  enabled: true, // Set to false to disable analytics in development
+};
+
 const routes = {
   "/": true,
   "/about": true,
-  "/work": true,
-  "/blog": true,
+  "/work": false,
+  "/services": false,
   "/gallery": true,
 };
 
 const display = {
   location: true,
   time: true,
-  themeSwitcher: true
+  themeSwitcher: false
+};
+
+// Theme configuration
+const theme = {
+  enabled: false, // Set to false to disable theme switching entirely
+  forceMode: 'light', // Set to 'light' or 'dark' to force a specific theme, or null for normal behavior
 };
 
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes = {
+  "/about": true,
+  "/gallery": true,
   "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
 };
 
@@ -60,13 +74,13 @@ const fonts = {
 
 // default customization applied to the HTML in the main layout.tsx
 const style = {
-  theme: "system", // dark | light | system
+  theme: "light", // dark | light | system
   neutral: "custom", // sand | gray | slate | custom
   brand: "custom", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
   accent: "custom", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
-  border: "playful", // rounded | playful | conservative
+  border: "conservative", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
   transition: "all", // all | micro | macro
   scaling: "100" // 90 | 95 | 100 | 105 | 110
@@ -94,7 +108,7 @@ const effects = {
     radius: 100,
   },
   gradient: {
-    display: true,
+    display: false,
     opacity: 60,
     x: 50,
     y: 60,
@@ -105,7 +119,7 @@ const effects = {
     colorEnd: "accent-background-weak",
   },
   dots: {
-    display: true,
+    display: false,
     opacity: 30,
     size: "2",
     color: "brand-background-medium",
@@ -187,4 +201,4 @@ const sameAs = {
   discord: "https://discord.com/invite/5EyAQ4eNdS",
 };
 
-export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };
+export { display, theme, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle, analytics };

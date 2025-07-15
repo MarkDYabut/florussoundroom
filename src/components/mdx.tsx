@@ -22,6 +22,7 @@ import {
   Media,
   SmartLink,
 } from "@once-ui-system/core";
+import { VideoPlayer } from "@/components/VideoPlayer";
 
 type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
@@ -179,6 +180,7 @@ const components = {
   Icon,
   Media,
   SmartLink,
+  VideoPlayer,
 };
 
 type CustomMDXProps = MDXRemoteProps & {

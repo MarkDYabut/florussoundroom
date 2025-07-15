@@ -1,0 +1,52 @@
+.sitemap {
+  width: 100%;
+  max-width: var(--static-max-width-m);
+}
+
+.sitemapTitle {
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sitemapLinks {
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.sitemapLink {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-s);
+  transition: all 0.2s ease;
+  position: relative;
+  
+  &:hover {
+    background-color: var(--neutral-alpha-weak);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  /* Add subtle underline effect on hover */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent-solid);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  &:hover::after {
+    width: 60%;
+  }
+}

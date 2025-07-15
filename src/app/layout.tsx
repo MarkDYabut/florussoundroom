@@ -1,12 +1,13 @@
 import '@once-ui-system/core/css/styles.css';
 import '@once-ui-system/core/css/tokens.css';
 import '@/resources/custom.css'
+import '@/resources/animated-background.css'
 
 import classNames from "classnames";
 
 import { Background, Column, Flex, Meta, opacity, SpacingToken } from "@once-ui-system/core";
-import { Footer, Header, RouteGuard, Providers } from '@/components';
-import { baseURL, effects, fonts, style, dataStyle, home } from '@/resources';
+import { Footer, Header, RouteGuard, Providers, TwitchChat, Analytics, SetmoreButton } from '@/components';
+import { baseURL, effects, fonts, style, dataStyle, home, theme } from '@/resources';
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -44,7 +45,7 @@ export default async function RootLayout({
               (function() {
                 try {
                   const root = document.documentElement;
-                  const defaultTheme = 'system';
+                  const themeConfig = ${JSON.stringify(theme)};
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({
@@ -65,30 +66,40 @@ export default async function RootLayout({
                     root.setAttribute('data-' + key, value);
                   });
                   
-                  // Resolve theme
-                  const resolveTheme = (themeValue) => {
-                    if (!themeValue || themeValue === 'system') {
-                      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                    }
-                    return themeValue;
-                  };
+                  // Handle theme configuration
+                  let finalTheme;
                   
-                  // Apply saved theme
-                  const savedTheme = localStorage.getItem('data-theme');
-                  const resolvedTheme = resolveTheme(savedTheme);
-                  root.setAttribute('data-theme', resolvedTheme);
+                  if (!themeConfig.enabled || themeConfig.forceMode) {
+                    // Theme switching disabled or forced mode
+                    finalTheme = themeConfig.forceMode || 'light';
+                  } else {
+                    // Normal theme behavior
+                    const resolveTheme = (themeValue) => {
+                      if (!themeValue || themeValue === 'system') {
+                        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                      }
+                      return themeValue;
+                    };
+                    
+                    const savedTheme = localStorage.getItem('data-theme');
+                    finalTheme = resolveTheme(savedTheme);
+                  }
                   
-                  // Apply any saved style overrides
-                  const styleKeys = Object.keys(config);
-                  styleKeys.forEach(key => {
-                    const value = localStorage.getItem('data-' + key);
-                    if (value) {
-                      root.setAttribute('data-' + key, value);
-                    }
-                  });
+                  root.setAttribute('data-theme', finalTheme);
+                  
+                  // Apply any saved style overrides (only if theme switching is enabled)
+                  if (themeConfig.enabled && !themeConfig.forceMode) {
+                    const styleKeys = Object.keys(config);
+                    styleKeys.forEach(key => {
+                      const value = localStorage.getItem('data-' + key);
+                      if (value) {
+                        root.setAttribute('data-' + key, value);
+                      }
+                    });
+                  }
                 } catch (e) {
                   console.error('Failed to initialize theme:', e);
-                  document.documentElement.setAttribute('data-theme', 'dark');
+                  document.documentElement.setAttribute('data-theme', 'light');
                 }
               })();
             `,
@@ -100,6 +111,7 @@ export default async function RootLayout({
           src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"
         />
       </head>
+      <Analytics />
       <Providers>
         <Column as="body" background="page" fillWidth style={{minHeight: "100vh"}} margin="0" padding="0" horizontal="center">
           <Background
@@ -159,23 +171,70 @@ export default async function RootLayout({
               </Flex>
             </Flex>
             <Footer/>
-            <a 
-              style={{
-                position: 'fixed', 
-                right: '-2px', 
-                top: '25%', 
-                display: 'block', 
-                zIndex: 20000
-              }} 
-              id="Setmore_button_iframe" 
-              href="https://markyabut.setmore.com"
-            >
-              <img 
-                style={{border: 'none'}}
-                src="https://storage.googleapis.com/full-assets/setmore/images/1.0/Calendar/Setmore-Book-Now.png" 
-                alt="Book an appointment with mark yabut using Setmore" 
-              />
-            </a>
+            {/* Twitch Chat Toggle */}
+            {/* <TwitchChat channel="xqc" /> */}
+            <SetmoreButton />
+            
+            {/* Force black text colors after page load */}
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  (function() {
+                    function forceBlackText() {
+                      const root = document.documentElement;
+                      
+                      // Override all neutral color CSS variables
+                      const neutralVars = [
+                        '--neutral-on-background-strong',
+                        '--neutral-on-background-medium', 
+                        '--neutral-on-background-weak',
+                        '--neutral-text-strong',
+                        '--neutral-text-medium',
+                        '--neutral-text-weak',
+                        '--scheme-neutral-100',
+                        '--scheme-neutral-200',
+                        '--scheme-neutral-300',
+                        '--scheme-neutral-400',
+                        '--scheme-neutral-500',
+                        '--scheme-neutral-600',
+                        '--scheme-neutral-700',
+                        '--scheme-neutral-800',
+                        '--scheme-neutral-900',
+                        '--scheme-neutral-1000',
+                        '--scheme-neutral-1100',
+                        '--scheme-neutral-1200'
+                      ];
+                      
+                      neutralVars.forEach(varName => {
+                        root.style.setProperty(varName, '#000000', 'important');
+                      });
+                      
+                      // Force all text elements to black
+                      const textElements = document.querySelectorAll('p, span, div, h1, h2, h3, h4, h5, h6, a, li, td, th, label');
+                      textElements.forEach(el => {
+                        if (el.style) {
+                          el.style.setProperty('color', '#000000', 'important');
+                        }
+                      });
+                    }
+                    
+                    // Run immediately
+                    forceBlackText();
+                    
+                    // Run after DOM is loaded
+                    if (document.readyState === 'loading') {
+                      document.addEventListener('DOMContentLoaded', forceBlackText);
+                    }
+                    
+                    // Run after everything is loaded
+                    window.addEventListener('load', forceBlackText);
+                    
+                    // Run periodically to catch any dynamic content
+                    setInterval(forceBlackText, 500);
+                  })();
+                `
+              }}
+            />
           </Column>
         </Providers>
       </Flex>

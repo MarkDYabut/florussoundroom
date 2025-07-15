@@ -31,14 +31,12 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
 
         if (pathname in routes) {
           return routes[pathname as keyof typeof routes];
+        }      const dynamicRoutes = ["/services", "/work"] as const;
+      for (const route of dynamicRoutes) {
+        if (pathname?.startsWith(route) && routes[route]) {
+          return true;
         }
-
-        const dynamicRoutes = ["/blog", "/work"] as const;
-        for (const route of dynamicRoutes) {
-          if (pathname?.startsWith(route) && routes[route]) {
-            return true;
-          }
-        }
+      }
 
         return false;
       };
@@ -49,9 +47,20 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
       if (protectedRoutes[pathname as keyof typeof protectedRoutes]) {
         setIsPasswordRequired(true);
 
-        const response = await fetch("/api/check-auth");
-        if (response.ok) {
-          setIsAuthenticated(true);
+        // Check sessionStorage for existing authentication with timestamp
+        const storedAuth = sessionStorage.getItem("isAuthenticated");
+        const authTimestamp = sessionStorage.getItem("authTimestamp");
+        const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes in milliseconds
+        
+        if (storedAuth === "true" && authTimestamp) {
+          const timeElapsed = Date.now() - parseInt(authTimestamp);
+          if (timeElapsed < SESSION_TIMEOUT) {
+            setIsAuthenticated(true);
+          } else {
+            // Session expired, clear storage
+            sessionStorage.removeItem("isAuthenticated");
+            sessionStorage.removeItem("authTimestamp");
+          }
         }
       }
 
@@ -61,16 +70,58 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
     performChecks();
   }, [pathname]);
 
-  const handlePasswordSubmit = async () => {
-    const response = await fetch("/api/authenticate", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password }),
-    });
+  // Additional security: Clear session on page visibility change (tab switch/minimize)
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        // Clear authentication when tab becomes hidden
+        sessionStorage.removeItem("isAuthenticated");
+        sessionStorage.removeItem("authTimestamp");
+        setIsAuthenticated(false);
+      }
+    };
 
-    if (response.ok) {
+    // Clear session on beforeunload (page refresh/close)
+    const handleBeforeUnload = () => {
+      sessionStorage.removeItem("isAuthenticated");
+      sessionStorage.removeItem("authTimestamp");
+    };
+
+    // Set up periodic session check (every 5 minutes)
+    const sessionCheckInterval = setInterval(() => {
+      const authTimestamp = sessionStorage.getItem("authTimestamp");
+      const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes
+      
+      if (authTimestamp) {
+        const timeElapsed = Date.now() - parseInt(authTimestamp);
+        if (timeElapsed >= SESSION_TIMEOUT) {
+          sessionStorage.removeItem("isAuthenticated");
+          sessionStorage.removeItem("authTimestamp");
+          setIsAuthenticated(false);
+        }
+      }
+    }, 5 * 60 * 1000); // Check every 5 minutes
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      clearInterval(sessionCheckInterval);
+    };
+  }, []);
+
+  const handlePasswordSubmit = () => {
+    // Simple hardcoded password check
+    const correctPassword = "fof2025"; // Change this to your desired password
+    
+    if (password === correctPassword) {
       setIsAuthenticated(true);
       setError(undefined);
+      // Store authentication in sessionStorage with timestamp for session persistence
+      sessionStorage.setItem("isAuthenticated", "true");
+      sessionStorage.setItem("authTimestamp", Date.now().toString());
     } else {
       setError("Incorrect password");
     }
@@ -92,7 +143,7 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
     return (
       <Column paddingY="128" maxWidth={24} gap="24" center>
         <Heading align="center" wrap="balance">
-          This page is password protected
+          This page is coming soon.
         </Heading>
         <Column fillWidth gap="8" horizontal="center">
           <PasswordInput

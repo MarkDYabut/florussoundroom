@@ -1,6 +1,8 @@
-import { Flex, Meta, Schema } from "@once-ui-system/core";
+import { Flex, Meta, Schema, Column } from "@once-ui-system/core";
 import MasonryGrid from "@/components/gallery/MasonryGrid";
+import { PersonHeader, VideoPlayer } from "@/components";
 import { baseURL, gallery, person } from "@/resources";
+import { getImagesFromFolder } from "@/utils/galleryUtils";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -13,8 +15,11 @@ export async function generateMetadata() {
 }
 
 export default function Gallery() {
+  // Load all images from the specified folder
+  const images = getImagesFromFolder(gallery.imageFolder);
+
   return (
-    <Flex maxWidth="l">
+    <Column maxWidth="l" gap="xl" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -28,7 +33,25 @@ export default function Gallery() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <MasonryGrid />
-    </Flex>
+      <PersonHeader 
+        variant="default" 
+        showSocial={true} 
+        pageTitle={gallery.label}
+        headerTitle="Studio & Event Gallery"
+        description="Behind-the-scenes photos from studio sessions, events, and sound system installations showcasing our work and the creative environment we've built."
+      />
+      <VideoPlayer 
+        src="/videos/blend-6.mp4"
+        alt="Gallery showcase video"
+        aspectRatio="9 / 16"
+        controls={true}
+        muted={true}
+        autoPlay={true}
+        loop={true}
+        poster="/images/gallery/FLORUS-52.jpg"
+        marginBottom="xl"
+      />
+      <MasonryGrid images={images} />
+    </Column>
   );
 }
