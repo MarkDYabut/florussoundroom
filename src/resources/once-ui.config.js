@@ -20,7 +20,7 @@ const routes = {
 const display = {
   location: true,
   time: true,
-  themeSwitcher: true
+  themeSwitcher: false
 };
 
 // Theme configuration
@@ -32,6 +32,8 @@ const theme = {
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes = {
+  "/about": true,
+  "/gallery": true,
   "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
 };
 
