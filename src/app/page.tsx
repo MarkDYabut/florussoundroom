@@ -1,7 +1,7 @@
 import React from "react";
 import { Column, Schema } from "@once-ui-system/core";
 import { home, about, person, baseURL } from "@/resources";
-import { LandingNavigation, PersonHeader } from "@/components";
+import { LandingNavigation, PersonHeader, ConditionalRevealFx } from "@/components";
 import { landingNavigation, landingNavigationFlower } from "@/config/landingNavigation";
 
 export default function Home() {
@@ -30,10 +30,13 @@ export default function Home() {
 
       {/* Custom Landing Navigation - Florus Branding */}
       <Column fillWidth gap="m" horizontal="center" vertical="center" style={{ minHeight: "50vh" }}>
-        <LandingNavigation 
-          items={landingNavigation.items}
-          showSubtext={landingNavigation.showSubtext}
-        />
+      
+        <ConditionalRevealFx translateY="4" delay={0.1} fillWidth horizontal="center">
+          <LandingNavigation 
+            items={landingNavigation.items}
+            showSubtext={landingNavigation.showSubtext}
+          />
+        </ConditionalRevealFx>
       </Column>
 
       {/* Custom Landing Navigation - Flower Logos */}
