@@ -5,6 +5,20 @@
   /* #010101 - Near black */
   /* #325C5B - Dark teal/green */
   
+  /* FORCE ALL NEUTRAL COLORS TO BLACK FOR TEXT */
+  --scheme-neutral-100: #000000 !important;
+  --scheme-neutral-200: #000000 !important;
+  --scheme-neutral-300: #000000 !important;
+  --scheme-neutral-400: #000000 !important;
+  --scheme-neutral-500: #000000 !important;
+  --scheme-neutral-600: #000000 !important;
+  --scheme-neutral-700: #000000 !important;
+  --scheme-neutral-800: #000000 !important;
+  --scheme-neutral-900: #000000 !important;
+  --scheme-neutral-1000: #000000 !important;
+  --scheme-neutral-1100: #000000 !important;
+  --scheme-neutral-1200: #000000 !important;
+  
   /* Brand colors - Corrected order for proper light/dark theme mapping */
   --scheme-brand-100: #f0f8f1;
   --scheme-brand-200: #e6f2e7;
@@ -60,9 +74,9 @@
 /* Text colors for proper contrast in light theme */
 [data-theme="light"] {
   /* Main text colors - dark colors for light backgrounds */
-  --neutral-on-background-strong: var(--scheme-neutral-1200); /* #010101 - darkest for main text */
-  --neutral-on-background-medium: var(--scheme-neutral-1000); /* #2a2a2a - medium dark for secondary text */
-  --neutral-on-background-weak: var(--scheme-neutral-800); /* #6a6a6a - lighter dark for subtle text */
+  --neutral-on-background-strong: #000000 !important; /* Pure black for main text */
+  --neutral-on-background-medium: #000000 !important; /* Pure black for secondary text */
+  --neutral-on-background-weak: #000000 !important; /* Pure black for subtle text */
   
   /* Brand text colors */
   --brand-on-background-strong: var(--scheme-brand-800); /* #325c5b - dark green for brand text */
@@ -171,4 +185,52 @@ html, body {
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+/* Force all text to be black - comprehensive override */
+[data-theme="light"] {
+  /* Override any potential Once UI text color variables */
+  --text-color: #000000 !important;
+  --primary-text: #000000 !important;
+  --secondary-text: #000000 !important;
+  --body-text: #000000 !important;
+  --heading-text: #000000 !important;
+  
+  /* Ensure neutral colors are black for text */
+  --neutral-text-strong: #000000 !important;
+  --neutral-text-medium: #000000 !important;
+  --neutral-text-weak: #000000 !important;
+  --neutral-text: #000000 !important;
+  
+  /* Force any "on background" variants */
+  --on-background: #000000 !important;
+  --on-surface: #000000 !important;
+  --on-primary: #000000 !important;
+}
+
+/* Direct CSS override for common text elements */
+[data-theme="light"] * {
+  /* Force text color on all elements in light theme */
+  color: #000000 !important;
+}
+
+/* Override for specific text elements that might have different selectors */
+[data-theme="light"] p,
+[data-theme="light"] span,
+[data-theme="light"] div,
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6,
+[data-theme="light"] a,
+[data-theme="light"] li,
+[data-theme="light"] td,
+[data-theme="light"] th,
+[data-theme="light"] label,
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] button {
+  color: #000000 !important;
 }
