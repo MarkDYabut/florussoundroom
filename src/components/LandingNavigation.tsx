@@ -14,6 +14,11 @@ export interface NavigationItem {
   external?: boolean;
   description?: string;
   subtext?: string; // Small text to display below the logo
+  spin?: {
+    enabled: boolean; // Whether spinning is enabled for this item
+    duration?: number; // Duration in seconds (default: 15)
+    hoverDuration?: number; // Duration on hover in seconds (default: 3)
+  };
 }
 
 interface LandingNavigationProps {
@@ -43,15 +48,17 @@ export function LandingNavigation({ items, title, subtitle, showLabels = false, 
       )}
       
       <Flex 
-        gap="l" 
-        wrap={false}
+        gap="m" 
+        wrap={true}
         horizontal="center" 
         vertical="center"
         style={{ 
           maxWidth: "100%",
-          gap: "clamp(20px, 6vw, 40px)",
+          gap: "clamp(8px, 2vw, 16px)",
           justifyContent: "center",
-          flexWrap: "nowrap"
+          flexWrap: "wrap",
+          width: "100%",
+          overflow: "hidden"
         }}
       >
         {items.map((item) => (
@@ -61,22 +68,27 @@ export function LandingNavigation({ items, title, subtitle, showLabels = false, 
             horizontal="center"
             vertical="center"
             style={{
-              minWidth: "clamp(120px, 15vw, 150px)",
+              minWidth: "clamp(100px, 12vw, 130px)",
+              maxWidth: "clamp(100px, 12vw, 130px)",
+              flex: "0 0 auto"
             }}
           >
             <div
               style={{
-                minWidth: "clamp(120px, 15vw, 150px)",
-                minHeight: "clamp(120px, 15vw, 150px)",
+                minWidth: "clamp(100px, 12vw, 130px)",
+                minHeight: "clamp(100px, 12vw, 130px)",
+                maxWidth: "clamp(100px, 12vw, 130px)",
+                maxHeight: "clamp(100px, 12vw, 130px)",
                 borderRadius: "50%",
-                padding: "clamp(30px, 5vw, 45px)",
+                padding: "clamp(20px, 3vw, 30px)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 background: "transparent",
                 backdropFilter: "blur(8px)",
                 transition: "transform 0.2s ease, opacity 0.2s ease",
-                cursor: "pointer"
+                cursor: "pointer",
+                overflow: "hidden"
               }}            onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
               e.currentTarget.style.transform = "scale(1.1)";
               e.currentTarget.style.opacity = "0.9";
@@ -97,11 +109,15 @@ export function LandingNavigation({ items, title, subtitle, showLabels = false, 
                 <img
                   src={item.image}
                   alt={item.label}
-                  className={styles.spinningImage}
+                  className={item.spin?.enabled ? styles.spinningImage : ''}
                   style={{
                     width: "clamp(80px, 10vw, 100px)",
                     height: "clamp(80px, 10vw, 100px)",
-                    objectFit: "contain"
+                    objectFit: "contain",
+                    ...(item.spin?.enabled && {
+                      animationDuration: `${item.spin.duration || 15}s`,
+                      '--hover-duration': `${item.spin.hoverDuration || 3}s`
+                    } as React.CSSProperties)
                   }}
                 />
               ) : item.icon ? (
@@ -109,7 +125,13 @@ export function LandingNavigation({ items, title, subtitle, showLabels = false, 
                   name={item.icon} 
                   size="xl" 
                   onBackground="neutral-strong"
-                  className={styles.spinningIcon}
+                  className={item.spin?.enabled ? styles.spinningIcon : ''}
+                  style={{
+                    ...(item.spin?.enabled && {
+                      animationDuration: `${item.spin.duration || 15}s`,
+                      '--hover-duration': `${item.spin.hoverDuration || 3}s`
+                    } as React.CSSProperties)
+                  }}
                 />
               ) : null}
             </div>

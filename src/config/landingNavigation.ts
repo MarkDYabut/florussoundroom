@@ -13,10 +13,15 @@ export const landingNavigation = {
     {
       id: "about",
       label: "About Us",
-      image: "/logos/default-florus.webp", // Custom logo image
+      image: "/logos/flower-2.png", // Custom logo image
       href: "/about",
       description: "Learn about our studio",
-      subtext: "Discover Our Story" // Small text below logo
+      subtext: "Discover Our Story", // Small text below logo
+      spin: {
+        enabled: false,
+        duration: 15, // 15 seconds for normal rotation
+        hoverDuration: 3 // 3 seconds on hover
+      }
     },
     {
       id: "booking",
@@ -25,15 +30,23 @@ export const landingNavigation = {
       href: "https://florussoundroom.setmore.com",
       external: true,
       description: "Schedule your session",
-      subtext: "Reserve Your Slot" // Small text below logo
+      subtext: "Reserve Your Slot", // Small text below logo
+      spin: {
+        enabled: true // No spinning for booking button
+      }
     },
     {
       id: "gallery",
       label: "Studio Gallery",
-      image: "/logos/default-florus.webp", // Custom logo image
+      image: "/logos/flower-1.png", // Custom logo image
       href: "/gallery",
       description: "View our space",
-      subtext: "Explore Gallery"
+      subtext: "Explore Gallery",
+      spin: {
+        enabled: true,
+        duration: 20, // Slower rotation for gallery
+        hoverDuration: 2 // Faster hover effect
+      }
     }
   ] as NavigationItem[]
 };
@@ -53,7 +66,12 @@ export const landingNavigationFlower = {
       image: "/logos/flower-1.png", // Flower logo variant 1
       href: "/about",
       description: "Learn about our studio",
-      subtext: "Discover Our Story"
+      subtext: "Discover Our Story",
+      spin: {
+        enabled: true,
+        duration: 12, // Faster rotation for flower variant
+        hoverDuration: 2
+      }
     },
     {
       id: "booking",
@@ -62,7 +80,12 @@ export const landingNavigationFlower = {
       href: "https://florussoundroom.setmore.com",
       external: true,
       description: "Schedule your session",
-      subtext: "Reserve Your Slot"
+      subtext: "Reserve Your Slot",
+      spin: {
+        enabled: true,
+        duration: 18, // Medium rotation
+        hoverDuration: 4
+      }
     },
     {
       id: "gallery",
@@ -70,7 +93,12 @@ export const landingNavigationFlower = {
       image: "/logos/flower-3.png", // Flower logo variant 3
       href: "/gallery",
       description: "View our space",
-      subtext: "Explore Gallery"
+      subtext: "Explore Gallery",
+      spin: {
+        enabled: true,
+        duration: 25, // Slowest rotation
+        hoverDuration: 5
+      }
     }
   ] as NavigationItem[]
 };
@@ -87,3 +115,16 @@ export const landingNavigationFlower = {
 // To add external links, set external: true
 // To show small text below logos, set showSubtext: true and add subtext property to items
 // To modify styling, update the component props or add custom CSS
+
+// Spin Animation Configuration:
+// Each navigation item supports optional spin animation settings:
+// - spin.enabled: true/false to enable/disable spinning for that item
+// - spin.duration: number in seconds for normal rotation speed (default: 15)
+// - spin.hoverDuration: number in seconds for hover rotation speed (default: 3)
+// Example:
+// spin: {
+//   enabled: true,
+//   duration: 20,      // 20 seconds per rotation
+//   hoverDuration: 2   // 2 seconds per rotation on hover
+// }
+// Set enabled: false to completely disable spinning for specific items

@@ -13,7 +13,7 @@
 }
 
 .spinningImage:hover {
-  animation-duration: 3s;
+  animation-duration: var(--hover-duration, 3s);
 }
 
 .spinningIcon {
@@ -22,5 +22,5 @@
 }
 
 .spinningIcon:hover {
-  animation-duration: 3s;
+  animation-duration: var(--hover-duration, 3s);
 }

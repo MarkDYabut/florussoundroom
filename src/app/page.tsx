@@ -37,12 +37,12 @@ export default function Home() {
       </Column>
 
       {/* Custom Landing Navigation - Flower Logos */}
-      <Column fillWidth gap="m" horizontal="center" vertical="center" style={{ minHeight: "50vh" }}>
+      {/* <Column fillWidth gap="m" horizontal="center" vertical="center" style={{ minHeight: "50vh" }}>
         <LandingNavigation 
           items={landingNavigationFlower.items}
           showSubtext={landingNavigationFlower.showSubtext}
         />
-      </Column>
+      </Column> */}
     </Column>
   );
 }
