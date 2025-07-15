@@ -45,7 +45,7 @@ export default function Gallery() {
         alt="Gallery showcase video"
         aspectRatio="9 / 16"
         controls={true}
-        muted={false}
+        muted={true}
         autoPlay={true}
         loop={true}
         poster="/images/gallery/FLORUS-52.jpg"

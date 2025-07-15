@@ -252,7 +252,7 @@ export default function About() {
               radius="m"
               controls={true}
               autoPlay={true}
-              muted={false}
+              muted={true}
               loop={true}
               poster="/images/gallery/FLORUS-3.jpg"
               marginBottom="16"

@@ -47,7 +47,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
   autoPlay = false,
   controls = true,
   loop = false,
-  muted = false,
+  muted = true,
   poster,
   className = "",
   style = {},
