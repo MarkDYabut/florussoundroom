@@ -74,13 +74,13 @@ const fonts = {
 
 // default customization applied to the HTML in the main layout.tsx
 const style = {
-  theme: "system", // dark | light | system
+  theme: "light", // dark | light | system
   neutral: "custom", // sand | gray | slate | custom
   brand: "custom", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
   accent: "custom", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
-  border: "playful", // rounded | playful | conservative
+  border: "conservative", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
   transition: "all", // all | micro | macro
   scaling: "100" // 90 | 95 | 100 | 105 | 110

@@ -43,7 +43,7 @@ export const landingNavigation = {
       description: "View our space",
       subtext: "Explore Gallery",
       spin: {
-        enabled: true,
+        enabled: false,
         duration: 20, // Slower rotation for gallery
         hoverDuration: 2 // Faster hover effect
       }
