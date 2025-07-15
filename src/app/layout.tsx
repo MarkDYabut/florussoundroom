@@ -7,7 +7,7 @@ import classNames from "classnames";
 
 import { Background, Column, Flex, Meta, opacity, SpacingToken } from "@once-ui-system/core";
 import { Footer, Header, RouteGuard, Providers, TwitchChat, Analytics, SetmoreButton } from '@/components';
-import { baseURL, effects, fonts, style, dataStyle, home } from '@/resources';
+import { baseURL, effects, fonts, style, dataStyle, home, theme } from '@/resources';
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -45,7 +45,7 @@ export default async function RootLayout({
               (function() {
                 try {
                   const root = document.documentElement;
-                  const defaultTheme = 'system';
+                  const themeConfig = ${JSON.stringify(theme)};
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({
@@ -66,30 +66,40 @@ export default async function RootLayout({
                     root.setAttribute('data-' + key, value);
                   });
                   
-                  // Resolve theme
-                  const resolveTheme = (themeValue) => {
-                    if (!themeValue || themeValue === 'system') {
-                      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                    }
-                    return themeValue;
-                  };
+                  // Handle theme configuration
+                  let finalTheme;
                   
-                  // Apply saved theme
-                  const savedTheme = localStorage.getItem('data-theme');
-                  const resolvedTheme = resolveTheme(savedTheme);
-                  root.setAttribute('data-theme', resolvedTheme);
+                  if (!themeConfig.enabled || themeConfig.forceMode) {
+                    // Theme switching disabled or forced mode
+                    finalTheme = themeConfig.forceMode || 'light';
+                  } else {
+                    // Normal theme behavior
+                    const resolveTheme = (themeValue) => {
+                      if (!themeValue || themeValue === 'system') {
+                        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                      }
+                      return themeValue;
+                    };
+                    
+                    const savedTheme = localStorage.getItem('data-theme');
+                    finalTheme = resolveTheme(savedTheme);
+                  }
                   
-                  // Apply any saved style overrides
-                  const styleKeys = Object.keys(config);
-                  styleKeys.forEach(key => {
-                    const value = localStorage.getItem('data-' + key);
-                    if (value) {
-                      root.setAttribute('data-' + key, value);
-                    }
-                  });
+                  root.setAttribute('data-theme', finalTheme);
+                  
+                  // Apply any saved style overrides (only if theme switching is enabled)
+                  if (themeConfig.enabled && !themeConfig.forceMode) {
+                    const styleKeys = Object.keys(config);
+                    styleKeys.forEach(key => {
+                      const value = localStorage.getItem('data-' + key);
+                      if (value) {
+                        root.setAttribute('data-' + key, value);
+                      }
+                    });
+                  }
                 } catch (e) {
                   console.error('Failed to initialize theme:', e);
-                  document.documentElement.setAttribute('data-theme', 'dark');
+                  document.documentElement.setAttribute('data-theme', 'light');
                 }
               })();
             `,

@@ -23,6 +23,12 @@ const display = {
   themeSwitcher: true
 };
 
+// Theme configuration
+const theme = {
+  enabled: false, // Set to false to disable theme switching entirely
+  forceMode: 'light', // Set to 'light' or 'dark' to force a specific theme, or null for normal behavior
+};
+
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes = {
@@ -193,4 +199,4 @@ const sameAs = {
   discord: "https://discord.com/invite/5EyAQ4eNdS",
 };
 
-export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle, analytics };
+export { display, theme, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle, analytics };
