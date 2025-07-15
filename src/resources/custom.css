@@ -116,6 +116,59 @@ html, body {
   box-sizing: border-box;
 }
 
+/* Force white background */
+[data-theme="light"] {
+  --page-background: #ffffff !important;
+  --page-background-rgb: 255, 255, 255 !important;
+  --neutral-background-weak: #ffffff !important;
+  --neutral-background-medium: #ffffff !important;
+  --neutral-background-strong: #ffffff !important;
+  --brand-background-weak: #ffffff !important;
+  --brand-background-medium: #ffffff !important;
+  --brand-background-strong: #ffffff !important;
+  --accent-background-weak: #ffffff !important;
+  --accent-background-medium: #ffffff !important;
+  --accent-background-strong: #ffffff !important;
+}
+
+[data-theme="dark"] {
+  --page-background: #ffffff !important;
+  --page-background-rgb: 255, 255, 255 !important;
+  --neutral-background-weak: #ffffff !important;
+  --neutral-background-medium: #ffffff !important;
+  --neutral-background-strong: #ffffff !important;
+  --brand-background-weak: #ffffff !important;
+  --brand-background-medium: #ffffff !important;
+  --brand-background-strong: #ffffff !important;
+  --accent-background-weak: #ffffff !important;
+  --accent-background-medium: #ffffff !important;
+  --accent-background-strong: #ffffff !important;
+}
+
+/* Ensure body and html have white background */
+html, body {
+  background-color: #ffffff !important;
+}
+
+/* Force the main column to have white background */
+[data-background="page"] {
+  background-color: #ffffff !important;
+}
+
+/* Override any background effects */
+.animated-background,
+.animated-background::before,
+.animated-background::after {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* Force any gradient or background elements to be white */
+[data-background] {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }

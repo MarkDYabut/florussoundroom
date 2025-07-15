@@ -108,7 +108,7 @@ const effects = {
     radius: 100,
   },
   gradient: {
-    display: true,
+    display: false,
     opacity: 60,
     x: 50,
     y: 60,
@@ -119,7 +119,7 @@ const effects = {
     colorEnd: "accent-background-weak",
   },
   dots: {
-    display: true,
+    display: false,
     opacity: 30,
     size: "2",
     color: "brand-background-medium",
