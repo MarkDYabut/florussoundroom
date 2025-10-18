@@ -13,37 +13,37 @@ export const landingNavigation = {
     {
       id: "about",
       label: "About Us",
-      image: "/logos/flower-2.png", // Custom logo image
-      href: "/about",
-      description: "Learn about our studio",
-      subtext: "Discover Our Story", // Small text below logo
+      image: "/logos/flower-1.png", // Custom logo image
+      href: "https://parsnip-sealion-9ja2.squarespace.com/blog",
+      description: "Learn about us",
+      subtext: "Discover our story", // Small text below logo
       spin: {
-        enabled: false,
-        duration: 15, // 15 seconds for normal rotation
+        enabled: true,
+        duration: 17, // 15 seconds for normal rotation
         hoverDuration: 3 // 3 seconds on hover
       }
     },
     {
       id: "booking",
       label: "Book Session",
-      image: "/logos/book-now-florus.webp", // Custom booking logo
+      image: "/logos/flower-2.png", // Custom booking logo
       href: "https://florussoundroom.setmore.com",
       external: true,
       description: "Schedule your session",
-      subtext: "Reserve Your Slot", // Small text below logo
+      subtext: "Reserve a session", // Small text below logo
       spin: {
         enabled: true // No spinning for booking button
       }
     },
     {
-      id: "gallery",
-      label: "Studio Gallery",
-      image: "/logos/flower-1.png", // Custom logo image
-      href: "/gallery",
-      description: "View our space",
-      subtext: "Explore Gallery",
+      id: "rentals",
+      label: "Contact us for rentals",
+      image: "/logos/flower-3.png", // Custom logo image
+      href: "https://parsnip-sealion-9ja2.squarespace.com/contact-1",
+      description: "",
+      subtext: "Plan an event with us",
       spin: {
-        enabled: false,
+        enabled: true,
         duration: 20, // Slower rotation for gallery
         hoverDuration: 2 // Faster hover effect
       }
