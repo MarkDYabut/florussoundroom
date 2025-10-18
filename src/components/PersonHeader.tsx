@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Flex, Text, Button, Avatar, Column, Icon, IconButton } from "@once-ui-system/core";
+import { Heading, Flex, Text, Button, Column, Icon, IconButton } from "@once-ui-system/core";
 import { person, social } from "@/resources";
 import { Location } from "@/components/Location";
 import { ConditionalRevealFx } from "./ConditionalRevealFx";
@@ -81,7 +81,18 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
     return (
       <ConditionalRevealFx translateY="4" fillWidth horizontal="center" paddingTop="32" paddingBottom="16" className={className}>
         <Column gap="s" horizontal="center">
-          <Avatar src={person.avatar} size="xl" />
+          <ConditionalRevealFx translateY="8" delay={0.1}>
+            <img 
+              src={person.avatar} 
+              alt={person.name}
+              style={{
+                width: '150px',
+                height: '150px',
+                objectFit: 'cover',
+                borderRadius: '8px'
+              }}
+            />
+          </ConditionalRevealFx>
         </Column>
       </ConditionalRevealFx>
     );
@@ -90,7 +101,18 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
   // Default variant for index page
   const content = (
     <Column gap="m" horizontal="center">
-      <Avatar src={person.avatar} size="xl" />
+      <ConditionalRevealFx translateY="8" delay={0.1}>
+        <img 
+          src={person.avatar} 
+          alt={person.name}
+          style={{
+            width: '150px',
+            height: '150px',
+            objectFit: 'cover',
+            borderRadius: '8px'
+          }}
+        />
+      </ConditionalRevealFx>
       <Heading variant="display-strong-xl" wrap="balance" style={{ textAlign: 'center' }}>
         {displayTitle}
       </Heading>
