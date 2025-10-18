@@ -81,16 +81,18 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
     return (
       <ConditionalRevealFx translateY="4" fillWidth horizontal="center" paddingTop="32" paddingBottom="16" className={className}>
         <Column gap="s" horizontal="center">
-          <img 
-            src={person.avatar} 
-            alt={person.name}
-            style={{
-              width: '150px',
-              height: '150px',
-              objectFit: 'cover',
-              borderRadius: '8px'
-            }}
-          />
+          <ConditionalRevealFx translateY="8" delay={0.1}>
+            <img 
+              src={person.avatar} 
+              alt={person.name}
+              style={{
+                width: '150px',
+                height: '150px',
+                objectFit: 'cover',
+                borderRadius: '8px'
+              }}
+            />
+          </ConditionalRevealFx>
         </Column>
       </ConditionalRevealFx>
     );
@@ -99,16 +101,18 @@ export const PersonHeader: React.FC<PersonHeaderProps> = ({
   // Default variant for index page
   const content = (
     <Column gap="m" horizontal="center">
-      <img 
-        src={person.avatar} 
-        alt={person.name}
-        style={{
-          width: '150px',
-          height: '150px',
-          objectFit: 'cover',
-          borderRadius: '8px'
-        }}
-      />
+      <ConditionalRevealFx translateY="8" delay={0.1}>
+        <img 
+          src={person.avatar} 
+          alt={person.name}
+          style={{
+            width: '150px',
+            height: '150px',
+            objectFit: 'cover',
+            borderRadius: '8px'
+          }}
+        />
+      </ConditionalRevealFx>
       <Heading variant="display-strong-xl" wrap="balance" style={{ textAlign: 'center' }}>
         {displayTitle}
       </Heading>
