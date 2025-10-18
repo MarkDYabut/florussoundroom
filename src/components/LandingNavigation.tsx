@@ -101,7 +101,12 @@ export function LandingNavigation({ items, title, subtitle, showLabels = false, 
                 if (item.external) {
                   window.open(item.href, "_blank", "noopener noreferrer");
                 } else {
-                  window.location.href = item.href;
+                  // Break out of iframe and navigate parent window
+                  if (window.top && window.top !== window) {
+                    window.top.location.href = item.href;
+                  } else {
+                    window.location.href = item.href;
+                  }
                 }
               }}
             >
