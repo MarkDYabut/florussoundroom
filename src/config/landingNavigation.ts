@@ -28,7 +28,7 @@ export const landingNavigation = {
       label: "Book Session",
       image: "/logos/flower-2.png", // Custom booking logo
       href: "https://florussoundroom.setmore.com",
-      external: true,
+      // external: true,
       description: "Schedule your session",
       subtext: "Reserve a session", // Small text below logo
       spin: {
