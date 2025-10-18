@@ -156,7 +156,7 @@ export default async function RootLayout({
             }}
           />
           <Flex fillWidth minHeight="16" hide="s"/>
-            <Header />
+            {/* <Header /> */}
             <Flex
               zIndex={0}
               fillWidth
@@ -170,7 +170,7 @@ export default async function RootLayout({
                 </RouteGuard>
               </Flex>
             </Flex>
-            <Footer/>
+            {/* <Footer/> */}
             {/* Twitch Chat Toggle */}
             {/* <TwitchChat channel="xqc" /> */}
             <SetmoreButton />
