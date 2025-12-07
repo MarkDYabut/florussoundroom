@@ -1,10 +1,16 @@
 "use client";
 
+import { useEffect } from "react";
 import { BorderStyle, ChartMode, ChartVariant, DataThemeProvider, IconProvider, NeutralColor, ScalingSize, Schemes, SolidStyle, SolidType, SurfaceStyle, ThemeProvider, ToastProvider, TransitionStyle } from "@once-ui-system/core";
 import { style, dataStyle } from "../resources";
 import { iconLibrary } from "../resources/icons";
+import { defineCustomElements } from 'fof-component-library/loader';
 
 export function Providers({ children }: { children: React.ReactNode }) {
+  // Initialize StencilJS web components
+  useEffect(() => {
+    defineCustomElements();
+  }, []);
   return (
     <ThemeProvider
       brand={style.brand as Schemes}

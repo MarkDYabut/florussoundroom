@@ -30,7 +30,7 @@ export default function Home() {
 
       {/* Custom Landing Navigation - Florus Branding */}
       <Column fillWidth gap="m" horizontal="center" vertical="center" style={{ minHeight: "50vh" }}>
-      
+        
         <ConditionalRevealFx translateY="4" delay={0.1} fillWidth horizontal="center">
           <LandingNavigation 
             items={landingNavigation.items}
@@ -46,6 +46,17 @@ export default function Home() {
           showSubtext={landingNavigationFlower.showSubtext}
         />
       </Column> */}
+
+      {/* Radio Player */}
+      <Column fillWidth gap="m" horizontal="center">
+        <radio-player 
+          host="s9be0c0f94.dj.radio.co"
+          stream-url="https://streaming.radio.co/s9be0c0f94/listen"
+          refresh-interval="30"
+          show-controls="true"
+          show-history="true">
+        </radio-player>      
+      </Column>
     </Column>
   );
 }
