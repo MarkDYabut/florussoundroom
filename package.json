@@ -15,7 +15,7 @@
     "@once-ui-system/core": "^1.2.4",
     "classnames": "^2.5.1",
     "cookie": "^1.0.2",
-    "fof-component-library": "^0.0.1",
+    "fof-component-library": "^0.0.2",
     "gray-matter": "^4.0.3",
     "next": "^15.3.1",
     "next-mdx-remote": "^5.0.0",
