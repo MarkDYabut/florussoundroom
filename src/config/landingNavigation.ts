@@ -14,7 +14,7 @@ export const landingNavigation = {
       id: "about",
       label: "About Us",
       image: "/logos/flower-1.png", // Custom logo image
-      href: "https://parsnip-sealion-9ja2.squarespace.com/blog",
+      href: "https://www.florussoundroom.com",
       description: "Learn about us",
       subtext: "Discover our story", // Small text below logo
       spin: {
@@ -39,7 +39,7 @@ export const landingNavigation = {
       id: "rentals",
       label: "Contact us for rentals",
       image: "/logos/flower-3.png", // Custom logo image
-      href: "https://parsnip-sealion-9ja2.squarespace.com/contact-1",
+      href: "https://www.florussoundroom.com/rentals",
       description: "",
       subtext: "Plan an event with us",
       spin: {
