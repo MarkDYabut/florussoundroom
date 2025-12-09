@@ -109,6 +109,7 @@ export default async function RootLayout({
           id="setmore_script" 
           type="text/javascript" 
           src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"
+          defer
         />
       </head>
       <Analytics />

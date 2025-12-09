@@ -43,11 +43,11 @@ const animations = {
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Subscribe to {person.firstName}&apos;s Newsletter</>,
   description: (
     <>
       Stay updated with the latest in sound engineering, production techniques, mixing insights, and
-      exclusive events from Toronto's premier DJ sound room and creative space.
+      exclusive events from Toronto&apos;s premier DJ sound room and creative space.
     </>
   ),
 };
