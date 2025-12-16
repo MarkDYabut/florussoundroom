@@ -13,6 +13,7 @@ declare namespace JSX {
       'stream-url'?: string;
       position?: string;
       fixed?: boolean;
+      theme?: string;
       children?: React.ReactNode;
     };
   }
