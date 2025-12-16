@@ -6,7 +6,7 @@ import { landingNavigation, landingNavigationFlower } from "@/config/landingNavi
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" horizontal="center" style={{ minHeight: "100vh" }}>
+    <Column paddingTop="l" maxWidth="m" gap="m" horizontal="center" style={{ minHeight: "100vh" }}>
         <Schema
           as="webPage"
           baseURL={baseURL}
@@ -22,14 +22,16 @@ export default function Home() {
         />
 
       {/* PersonHeader Section */}
-      <Column fillWidth gap="m">
+      <Column fillWidth gap="m" style={{ paddingTop: '4rem' }}>
         <PersonHeader
           variant="compact"
         />
       </Column>
 
+
+
       {/* Custom Landing Navigation - Florus Branding */}
-      <Column fillWidth gap="m" horizontal="center" vertical="center" style={{ minHeight: "50vh" }}>
+      <Column fillWidth gap="m" horizontal="center" vertical="center" >
 
         <ConditionalRevealFx translateY="4" delay={0.1} fillWidth horizontal="center">
           <LandingNavigation
@@ -50,7 +52,11 @@ export default function Home() {
       <radio-player-banner host="s9be0c0f94.dj.radio.co" stream-url="https://streaming.radio.co/s9be0c0f94/listen"
         position="top" fixed>
       </radio-player-banner>
+      <radio-player-banner theme="sunset" host="sc87d838f8.dj.radio.co" stream-url="https://streamer.radio.co/sc87d838f8/listen"
+        position="bottom" fixed>
+      </radio-player-banner>
 
+      {/* <radio-player-vinyl vinyl-color="black" size="300" theme="default" label-text="FLORUS" label-subtext="RADIO"></radio-player-vinyl> */}
 
       {/* Radio Player */}
       {/* <Column fillWidth gap="m" horizontal="center">
