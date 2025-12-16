@@ -163,9 +163,9 @@ export default async function RootLayout({
               fillWidth
               padding="l"
               horizontal="center"
-              flex={1}
+              style={{ minHeight: "100vh" }}
             >
-              <Flex horizontal="center" fillWidth minHeight="0">
+              <Flex horizontal="center" fillWidth>
                 <RouteGuard>
                   {children}
                 </RouteGuard>
@@ -175,67 +175,6 @@ export default async function RootLayout({
             {/* Twitch Chat Toggle */}
             {/* <TwitchChat channel="xqc" /> */}
             <SetmoreButton />
-            
-            {/* Force black text colors after page load */}
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  (function() {
-                    function forceBlackText() {
-                      const root = document.documentElement;
-                      
-                      // Override all neutral color CSS variables
-                      const neutralVars = [
-                        '--neutral-on-background-strong',
-                        '--neutral-on-background-medium', 
-                        '--neutral-on-background-weak',
-                        '--neutral-text-strong',
-                        '--neutral-text-medium',
-                        '--neutral-text-weak',
-                        '--scheme-neutral-100',
-                        '--scheme-neutral-200',
-                        '--scheme-neutral-300',
-                        '--scheme-neutral-400',
-                        '--scheme-neutral-500',
-                        '--scheme-neutral-600',
-                        '--scheme-neutral-700',
-                        '--scheme-neutral-800',
-                        '--scheme-neutral-900',
-                        '--scheme-neutral-1000',
-                        '--scheme-neutral-1100',
-                        '--scheme-neutral-1200'
-                      ];
-                      
-                      neutralVars.forEach(varName => {
-                        root.style.setProperty(varName, '#000000', 'important');
-                      });
-                      
-                      // Force all text elements to black
-                      const textElements = document.querySelectorAll('p, span, div, h1, h2, h3, h4, h5, h6, a, li, td, th, label');
-                      textElements.forEach(el => {
-                        if (el.style) {
-                          el.style.setProperty('color', '#000000', 'important');
-                        }
-                      });
-                    }
-                    
-                    // Run immediately
-                    forceBlackText();
-                    
-                    // Run after DOM is loaded
-                    if (document.readyState === 'loading') {
-                      document.addEventListener('DOMContentLoaded', forceBlackText);
-                    }
-                    
-                    // Run after everything is loaded
-                    window.addEventListener('load', forceBlackText);
-                    
-                    // Run periodically to catch any dynamic content
-                    setInterval(forceBlackText, 500);
-                  })();
-                `
-              }}
-            />
           </Column>
         </Providers>
       </Flex>
