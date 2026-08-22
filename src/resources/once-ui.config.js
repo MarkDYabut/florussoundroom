@@ -12,6 +12,7 @@ const analytics = {
 const routes = {
   "/": true,
   "/about": true,
+  "/menu": true,
   "/work": false,
   "/services": false,
   "/gallery": true,
@@ -37,33 +38,22 @@ const protectedRoutes = {
   "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
 };
 
-// Import and set font for each variant
-import { Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
-
-const heading = Geist({
+// Use local-safe CSS variable fallbacks instead of fetching Google-hosted fonts at build time.
+const heading = {
   variable: "--font-heading",
-  subsets: ["latin"],
-  display: "swap",
-});
+};
 
-const body = Geist({
+const body = {
   variable: "--font-body",
-  subsets: ["latin"],
-  display: "swap",
-});
+};
 
-const label = Geist({
+const label = {
   variable: "--font-label",
-  subsets: ["latin"],
-  display: "swap",
-});
+};
 
-const code = Geist_Mono({
+const code = {
   variable: "--font-code",
-  subsets: ["latin"],
-  display: "swap",
-});
+};
 
 const fonts = {
   heading: heading,

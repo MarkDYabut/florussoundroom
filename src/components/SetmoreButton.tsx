@@ -5,8 +5,8 @@ import { usePathname } from 'next/navigation';
 export default function SetmoreButton() {
   const pathname = usePathname();
   
-  // Hide the button on the index page (route '/')
-  if (pathname === '/') {
+  // Hide the button on the home and menu pages
+  if (pathname === '/' || pathname === '/menu') {
     return null;
   }
 
