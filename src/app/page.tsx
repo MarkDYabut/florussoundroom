@@ -6,7 +6,7 @@ import { landingNavigation, landingNavigationFlower } from "@/config/landingNavi
 
 export default function Home() {
   return (
-    <Column paddingTop="l" maxWidth="m" gap="m" horizontal="center" style={{ minHeight: "100vh" }}>
+    <Column paddingTop="l" maxWidth="m" gap="m" horizontal="center">
         <Schema
           as="webPage"
           baseURL={baseURL}
